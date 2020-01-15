@@ -176,6 +176,67 @@ DBMS may additionally provide:
 + Representing complex relationships among data.
 + Enforcing integrity constraints on the database.
 Drawing inferences and actions from the stored data using deductive and active rules and triggers.
+
+### Additional Implications of Using the Database Approach
++ Potential for enforcing standards:
+  - This is very crucial for the success of database applications in large organizations. Standards refer to data item names, display formats, screens, report structures, meta-data (description of data), Web page layouts, etc.
++ Reduced application development time:
+  - Incremental time to add each new application is reduced.
++ Flexibility to change data structures:
+  - Database structure may evolve as new requirements are defined. 
++ Availability of current information:
+  - Extremely important for on-line transaction systems such as shopping, airline, hotel, car reservations.
++ Economies of scale:
+  - Wasteful overlap of resources and personnel can be avoided by consolidating data and applications across departments.
 ## Historical Development of Database Technology
++ Early Database Applications:
+  - The Hierarchical and Network Models were introduced in mid 1960s and dominated during the seventies.
+  - A bulk of the worldwide database processing still occurs using these models, particularly, the hierarchical model using IBM’s IMS system.
++ Relational Model based Systems:
+  - Relational model was originally introduced in 1970, was heavily researched and experimented within IBM Research and several universities.
+  - Relational DBMS Products emerged in the early 1980s.
++ Object-oriented and emerging applications:
+  - Object-Oriented Database Management Systems (OODBMSs) were introduced in late 1980s and early 1990s to cater to the need of complex data processing in CAD and other applications.
+    + Their use has not taken off much.
+  - Many relational DBMSs have incorporated object database concepts, leading to a new category called object-relational DBMSs (ORDBMSs)
+  - Extended relational systems add further capabilities (e.g. for multimedia data, text, XML, and other data types)
++ Data on the Web and E-commerce Applications:
+  - Web contains data in HTML (Hypertext markup language) with links among pages.
+  - This has given rise to a new set of applications and E-commerce is using new standards like XML (eXtended  Markup Language). (see Ch. 13).
+  - Script programming languages such as PHP and JavaScript allow generation of dynamic Web pages that are partially generated from a database (see Ch. 11).
+    + Also allow database updates through Web pages
 ## Extending Database Capabilities
++ New functionality is being added to DBMSs in the following areas:
+  - Scientific Applications – Physics, Chemistry, Biology - Genetics
+  - Earth and Atmospheric Sciences and Astronomy
+  - XML (eXtensible Markup Language)
+  - Image Storage and Management
+  - Audio and Video Data Management
+  - Data Warehousing and Data Mining – a very major area for future development using new technologies (see Chapters 28-29)
+  - Spatial Data Management and Location Based Services
+  - Time Series and Historical Data Management
++ The above gives rise to new research and development in incorporating new data types, complex data structures, new operations and storage and indexing schemes in database systems.
++ Background since the advent of the  21st Century:
+
+  - First decade of the 21st century has seen tremendous growth in user generated data and automatically collected data from applications and search engines.
+
+  - Social Media platforms such as Facebook and Twitter are generating millions of transactions a day and businesses are interested to tap into this data to “understand” the users
+
+  - Cloud Storage and Backup is making unlimited amount of storage available to users and applications
++ Emergence of Big Data Technologies and NOSQL databases
+  - New data storage, management and analysis technology was necessary to deal with the onslaught of data in petabytes a day (10<sup>15</sup> bytes or 1000 terabytes) in some applications – this started being commonly called as “Big Data”.
+  - Hadoop (which originated from Yahoo) and Mapreduce Programming approach to distributed data processing (which originated from Google) as well as the Google file system have given rise to Big Data technologies (Chapter 25). Further enhancements are taking place in the form of Spark based technology.
+  - NOSQL (Not Only SQL- where SQL is the de facto standard language for relational DBMSs) systems have been designed for rapid search and retrieval from documents, processing of huge graphs occurring on social networks, and other forms of unstructured data with flexible models of transaction processing (Chapter 24). 
 ## When Not to Use Databases
++ Main inhibitors (costs) of using a DBMS:
+  - High initial investment and possible need for additional hardware.
+  - Overhead for providing generality, security, concurrency control, recovery, and  integrity functions.
++ When a DBMS may be unnecessary:
+  - If the database and applications are simple, well defined, and not expected to change.
+  - If access to data by multiple users is not required.
++ When a DBMS may be infeasible:
+  - In embedded systems where a general purpose DBMS may not fit in available storage
++ When no DBMS may suffice:
+  - If there are stringent real-time requirements that may not be met because of DBMS overhead (e.g., telephone switching systems)
+  - If the database system is not able to handle the complexity of data because of modeling limitations (e.g., in complex genome and protein databases)
+  - If the database users need special operations not supported by the DBMS (e.g., GIS and location based services).
