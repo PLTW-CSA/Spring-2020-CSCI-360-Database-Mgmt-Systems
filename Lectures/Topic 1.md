@@ -1,4 +1,18 @@
 # CSCI 360 Spring 2020
+
+# Topic 0: SQL vs. NO-SQL
+
+[SQL vs NoSQL: What's the difference?](https://www.guru99.com/sql-vs-nosql.html)
+
+## What is SQL?
++ Structured Query language (SQL) pronounced as "S-Q-L" or sometimes as "See-Quel" is the standard language for dealing with Relational Databases. A relational database defines relationships in the form of tables.
++ Relational databases like MySQL Database, Oracle, Ms SQL Server, Sybase, etc. use SQL
+
+## What is NoSQL?
++ NoSQL database stands for "Not Only SQL" or "Not SQL."
++ NoSQL is a non-relational DMS, that does not require a fixed schema, avoids joins, and is easy to scale. NoSQL database is used for distributed data stores with humongous data storage needs. NoSQL is used for Big data and real-time web apps. For example companies like Twitter, Facebook, Google that collect terabytes of user data every single day.
++ A NoSQL database system encompasses a wide range of database technologies that can store structured, semi-structured, unstructured and polymorphic data.
+
 # Topic 1: Databases and Database Users
 
 ## OUTLINE
