@@ -6,6 +6,9 @@
 
 [Introduction to NoSQL](https://www.geeksforgeeks.org/introduction-to-nosql/)
 
+
+![sql vs nosql](https://lawtomated.com/wp-content/uploads/2019/04/structuredVsUnstructuredIgneos.png)
+
 ## What is SQL?
 + Structured Query language (SQL) pronounced as "S-Q-L" or sometimes as "See-Quel" is the standard language for dealing with Relational Databases. A relational database defines relationships in the form of tables.
 + Relational databases like MySQL Database, Oracle, Ms SQL Server, Sybase, etc. use SQL
