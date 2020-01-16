@@ -133,7 +133,7 @@ Example of a simplified database catalog
   - A DBMS **catalog** stores the description of a particular database (e.g. data structures, types, and constraints)
   - The description is called **meta-data**.
   - This allows the DBMS software to work with different database applications.
- -----------------------------------------------------------------------------
+
   - **Note**: Some newer systems such as a few NOSQL systems need no meta-data: they store the data definition within its structure making it self describing
 
 
