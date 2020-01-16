@@ -154,7 +154,7 @@ Example of a simplified database catalog
   - Those who actually use and control the database content, and those who design, develop and maintain database applications (called “Actors on the Scene”), and
   - Those who design and develop the DBMS software and related tools, and the computer systems operators (called “Workers Behind the Scene”).
 ### Database Users – Actors on the Scene 
-+ Actors on the scene
++ Actors on the scene: who design, use, and administer a database.
   - **Database administrators**:
     + Responsible for authorizing access to the database, for coordinating and monitoring its use, acquiring software and hardware resources, controlling its use and monitoring efficiency of operations.
   - **Database Designers**:
@@ -179,7 +179,7 @@ Example of a simplified database catalog
     + **Application Programmers**: Implement the specifications developed by analysts and test and debug them before deployment.
     + **Business Analysts**: There is an increasing need for such people who can analyze vast amounts of business data and real-time data (“Big Data”) for better decision making related to planning, advertising, marketing etc. 
 ### Database Users – Actors behind the Scene 
-+ Actors behind the Scene 
++ Actors behind the Scene: who design, develop, and operate the DBMS software ans system enviroment.
   - **System Designers and Implementors**: Design and implement DBMS packages in the form of modules and interfaces and test and debug them. The DBMS must interface with applications, language compilers, operating system components, etc.
   - **Tool Developers**: Design and implement software systems called  tools for modeling and designing databases, performance monitoring, prototyping, test data generation, user interface creation, simulation etc. that facilitate building of applications and allow using database effectively.  
   - **Operators and Maintenance Personnel**: They manage the actual running and maintenance of the database system hardware and software environment.
