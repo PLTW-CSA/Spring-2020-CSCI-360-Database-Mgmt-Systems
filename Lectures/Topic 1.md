@@ -196,7 +196,7 @@ Example of a simplified database catalog
 + Providing multiple interfaces to different classes of users.
 + Representing complex relationships among data.
 + Enforcing integrity constraints on the database.
-Drawing inferences and actions from the stored data using deductive and active rules and triggers.
++ Drawing inferences and actions from the stored data using deductive and active rules and triggers.
 
 ### Additional Implications of Using the Database Approach
 + Potential for enforcing standards:
