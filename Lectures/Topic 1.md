@@ -43,7 +43,7 @@
   - Data Warehouses
   - Mobile databases
   - Real-time and Active Databases
-+ First part of book focuses on traditional applications
++ First part of this class focuses on traditional applications
 + A number of recent applications are described later in the book (for example, Chapters 24,25,26,27,28,29)
 
 ### Recent Developments
