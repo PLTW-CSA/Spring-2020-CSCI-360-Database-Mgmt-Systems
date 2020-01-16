@@ -157,9 +157,9 @@ Example of a simplified database catalog
 + Actors on the scene
   - **Database administrators**:
     + Responsible for authorizing access to the database, for coordinating and monitoring its use, acquiring software and hardware resources, controlling its use and monitoring efficiency of operations.
-  - **Database Designers:
+  - **Database Designers**:
     + Responsible to define the content, the structure, the constraints, and functions or transactions against the database. They must communicate with the end-users and understand their needs.
-  - **Database End Users
+  - **Database End Users**:
     + They use the data for queries, reports and some of them update the database content. End-users can be categorized into:
       - Casual: access database occasionally when needed
       - Naïve or Parametric: they make up a large section of the end-user population.
