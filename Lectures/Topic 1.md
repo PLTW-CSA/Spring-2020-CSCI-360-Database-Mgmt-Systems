@@ -51,6 +51,12 @@
 + Big Data storage systems involving large clusters of distributed computers (Chapter 25)
 + NOSQL (Not Only SQL) systems (Chapter 24)
 + A large amount of data now resides on the “cloud” which means it is in huge data centers using thousands of machines.
+### Impact of Databases and Database Technology
++ Businesses: Banking, Insurance, Retail, Transportation, Healthcare, Manufacturing
++ Service Industries: Financial, Real-estate, Legal, Electronic Commerce, Small businesses
++ Education : Resources for content and Delivery
++ More recently: Social Networks, Environmental and Scientific Applications, Medicine and Genetics
++ Personalized Applications: based on smart mobile devices
 ## Basic Definitions
 + **Database**:
   - A collection of related data.
@@ -63,12 +69,7 @@
 + **Database System**:
   - The DBMS software together with the data itself.  Sometimes, the applications are also included.
   
-### Impact of Databases and Database Technology
-+ Businesses: Banking, Insurance, Retail, Transportation, Healthcare, Manufacturing
-+ Service Industries: Financial, Real-estate, Legal, Electronic Commerce, Small businesses
-+ Education : Resources for content and Delivery
-+ More recently: Social Networks, Environmental and Scientific Applications, Medicine and Genetics
-+ Personalized Applications: based on smart mobile devices
+
 
 ### Simplified database system environment
 
