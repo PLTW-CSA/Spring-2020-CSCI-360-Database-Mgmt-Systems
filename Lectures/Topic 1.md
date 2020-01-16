@@ -119,20 +119,26 @@ DBMS may additionally provide:
 ![Example of a Database](https://gateoverflow.in/?qa=blob&qa_blobid=13465898471459769405)
 
 ## Main Characteristics of the Database Approach
+
+Example of a simplified database catalog
+
+![Example of a simplified database catalog](../Resources/ch1-3.png)
 + Self-describing nature of a database system:
   - A DBMS **catalog** stores the description of a particular database (e.g. data structures, types, and constraints)
   - The description is called **meta-data**.
   - This allows the DBMS software to work with different database applications.
+ 
+
+
 + Insulation between programs and data:
   - Called **program-data independence**.
   - Allows changing data structures and storage organization without having to change the DBMS access programs.
 -----------------------------------------------------------------------------
 + **Note**: Some newer systems such as a few NOSQL systems need no meta-data: they store the data definition within its structure making it self describing
-### Example of a simplified database catalog
 
-![Example of a simplified database catalog](../Resources/ch1-3.png)
 
-### Main Characteristics of the Database Approach 
+
+
 + Data Abstraction: 
   - A **data model** is used to hide storage details and present the users with a conceptual view  of the database.
   - Programs refer to the data model constructs rather than data storage details
