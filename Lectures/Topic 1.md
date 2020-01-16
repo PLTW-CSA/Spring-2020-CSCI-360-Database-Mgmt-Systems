@@ -14,6 +14,7 @@
 + NoSQL database stands for "Not Only SQL" or "Not SQL."
 + NoSQL is a non-relational DMS, that does not require a fixed schema, avoids joins, and is easy to scale. NoSQL database is used for distributed data stores with humongous data storage needs. NoSQL is used for Big data and real-time web apps. For example companies like Twitter, Facebook, Google that collect terabytes of user data every single day.
 + A NoSQL database system encompasses a wide range of database technologies that can store structured, semi-structured, unstructured and polymorphic data.
++ MongoDB, CouchDB, Cloudant
 
 # Topic 1: Databases and Database Users(chapter 1)
 
