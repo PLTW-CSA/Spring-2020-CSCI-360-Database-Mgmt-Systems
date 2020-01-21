@@ -29,8 +29,14 @@
 ## 2.1.1 Categories of Data Models
 + Conceptual (high-level, semantic) data models:
   - Provide concepts that are close to the way many users perceive data. (Also called entity-based or object-based data models.)
+    + entity (e.g. employee)
+    + attribute (e.g. employee's name)
+    + relationship (e.g. a work-on relationship between an employee and a project)
 + Physical (low-level, internal) data models:
-  - Provide concepts that describe details of how data is stored in the computer. These are usually specified in an ad-hoc manner through DBMS design and administration manuals
+  - Provide concepts that describe details of how data is stored in the computer. These are usually specified in an ad-hoc manner through DBMS design and administration manuals.
+    + record formats
+    + record orderings
+    + access paths
 + Implementation (representational) data models:
   - Provide concepts that fall between the above two, used by many commercial DBMS implementations (e.g. relational data models used in many commercial systems).
 + Self-Describing Data Models:
@@ -59,6 +65,8 @@
 + Distinction
   - The database schema changes very infrequently. 
   - The database state changes every time the database is updated. 
++ Meta-data
+  - The description of the schema constructs and constraints.
 
 + Schema is also called intension.
 + State is also called extension.
@@ -75,6 +83,7 @@
 
 ## 2.2.1 Three-Schema Architecture  
 + Proposed to support DBMS characteristics of:
+  - self-decribing
   - Program-data independence.
   - Support of multiple views of the data.
 + Not explicitly used in commercial DBMS products, but has been useful in explaining database system organization
