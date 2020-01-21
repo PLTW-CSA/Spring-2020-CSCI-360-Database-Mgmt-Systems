@@ -97,7 +97,9 @@
   - Usually uses the same data model as the conceptual schema.
   
   
-![Three-Schema Architecture  ](https://i.stack.imgur.com/wrTfx.jpg)
+
+
+<img src="https://i.stack.imgur.com/wrTfx.jpg" alt="Three-Schema Architecture" width="800" height="600"/>
 
 + Mappings among schema levels are needed to transform requests and data. 
   - Programs refer to an external schema, and are mapped by the DBMS to the internal schema for execution.
