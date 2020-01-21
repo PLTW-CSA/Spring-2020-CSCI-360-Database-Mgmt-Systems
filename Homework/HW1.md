@@ -2,7 +2,7 @@
 # Homework 1
 
 # Q1: A SQL database system stores \_\_ as its description(e.g. data structures, types, and constraints).(30 points) <br>
-A. data mode <br>
+A. data model <br>
 B. meta data <br>
 C. program <br>
 D. entity <br>
