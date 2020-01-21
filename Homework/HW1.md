@@ -1,7 +1,7 @@
 # CSCI 360 Spring 2020
 # Homework 1
 
-# Q1: A SQL database system store \_\_ as its description(e.g. data structures, types, and constraints).(30 points) <br>
+# Q1: A SQL database system stores \_\_ as its description(e.g. data structures, types, and constraints).(30 points) <br>
 A. data mode <br>
 B. meta data <br>
 C. program <br>
