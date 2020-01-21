@@ -95,12 +95,7 @@
   - Modification: Insertions, deletions and updates to its content
   - Accessing the database through Web applications
 + Processing and Sharing by a set of concurrent users and application programs – yet, keeping all data valid and consistent
-### Application Activities Against a Database
-+ Applications interact with a database by generating
-  - Queries: that access different parts of data and formulate the result of a request
-  - Transactions: that may read some data and “update” certain values or generate new data and store that in the database
-+ Applications must not allow unauthorized users to access data
-+ Applications must keep up with changing user requirements against the database
+
 ### Additional DBMS Functionality
 DBMS may additionally provide:
 + Protection or Security measures to prevent unauthorized access
@@ -108,6 +103,14 @@ DBMS may additionally provide:
 + Presentation and Visualization of data
 + Maintenance of the database and associated programs over the lifetime of the database application
   - Called database, software, and system maintenance
+
+### Application Activities Against a Database
++ Applications interact with a database by generating
+  - Queries: that access different parts of data and formulate the result of a request
+  - Transactions: that may read some data and “update” certain values or generate new data and store that in the database
++ Applications must not allow unauthorized users to access data
++ Applications must keep up with changing user requirements against the database
+
 ## Example of a Database (UNIVERSITY)
 ### Example of a Database (with a Conceptual Data Model)
 + Mini-world for the example:
