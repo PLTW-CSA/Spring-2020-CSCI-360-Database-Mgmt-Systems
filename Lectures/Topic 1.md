@@ -1,5 +1,9 @@
 # CSCI 360 Spring 2020
 
+# Lecture 1: Thursday 01/16/2020
+
+# [Syllabus](https://zhangningsau.github.io/CSCI360/Spring2020/Syllabus.html)
+
 # Topic 0: SQL vs. NO-SQL
 
 [SQL vs NoSQL: What's the difference?](https://www.guru99.com/sql-vs-nosql.html)
@@ -81,6 +85,8 @@
 
 ![Simplified database system environment](http://secure.tutorsglobe.com/CMSImages/82_simplified%20database%20system.jpg)
 
+
+# Lecture 2: Tuesday 01/21/2020 
 ## Typical DBMS Functionality
 + Define a particular database in terms of its data types, structures, and constraints
 + Construct or Load the initial database contents on a secondary storage medium
