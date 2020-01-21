@@ -73,7 +73,8 @@
 
 ### Example of a Database Schema
 
-![Example of a Database Schema](https://d2vlcm61l7u1fs.cloudfront.net/media%2Fd6c%2Fd6cbd079-6fbb-4d32-9efd-c04a59a7bb1a%2FphpOaAw7w.png =800x600)
+
+<img src="https://d2vlcm61l7u1fs.cloudfront.net/media%2Fd6c%2Fd6cbd079-6fbb-4d32-9efd-c04a59a7bb1a%2FphpOaAw7w.png" alt="Example of a Database Schema" width="800" height="600"/>
 
 ### Example of a database state
 
