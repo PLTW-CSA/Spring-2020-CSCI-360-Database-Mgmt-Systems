@@ -73,7 +73,7 @@
 
 ### Example of a Database Schema
 
-![Example of a Database Schema](https://files.transtutors.com/book/qimg/901f6add-e65e-4d16-96d8-a6815ce758c0.png)
+![Example of a Database Schema](https://d2vlcm61l7u1fs.cloudfront.net/media%2Fd6c%2Fd6cbd079-6fbb-4d32-9efd-c04a59a7bb1a%2FphpOaAw7w.png)
 
 ### Example of a database state
 
