@@ -118,8 +118,64 @@
   
 # 2.3 Database Languages and Interfaces
 ## 2.3.1 Database Languages
++ Data Definition Language (DDL)
++ Data Manipulation Language (DML)
+  - High-Level or Non-procedural Languages: These include the relational language SQL
+    + May be used in a standalone way or may be embedded in a programming language
+  - Low Level or Procedural Languages:
+    + These must be embedded in a programming language
+### Data Definition Language (DDL)
++ Used by the DBA and database designers to specify the conceptual schema of a database.
++ In many DBMSs, the DDL is also used to define internal and external schemas (views).
++ In some DBMSs, separate storage definition language (SDL) and view definition language (VDL) are used to define internal and external schemas.
+  - SDL is typically realized via DBMS commands provided to the DBA and database designers
+### Data Manipulation Language (DML)
++ Used to specify database retrievals and updates
++ DML commands (data sublanguage) can be embedded in a general-purpose programming language (host language), such as COBOL, C, C++, or Java.
+  - A library of functions can also be provided to access the DBMS from a programming language
++ Alternatively, stand-alone DML commands can be applied directly (called a query language).
++ Types of DML
+  - **High Level or Non-procedural Language**:
+    + For example, the SQL relational language
+    + Are “set”-oriented and specify what data to retrieve rather than how to retrieve it. 
+    + Also called declarative languages.
+  - **Low Level or Procedural Language:**
+    + Retrieve data one record-at-a-time; 
+    + Constructs such as looping are needed to retrieve multiple records, along with positioning pointers.
+## 2.3.2 Database Interfaces(DBMS Interfaces)
++ Stand-alone query language interfaces
+  - Example: Entering SQL queries at the DBMS interactive SQL interface (e.g. SQL*Plus in ORACLE)
++ Programmer interfaces for embedding DML in programming languages
++ User-friendly interfaces
+  - Menu-based, forms-based, graphics-based, etc.
++ Mobile Interfaces:interfaces allowing users to perform transactions using mobile apps
+### DBMS Programming Language Interfaces
++ Programmer interfaces for embedding DML in a programming languages:
+  - **Embedded Approach**: e.g embedded SQL (for C, C++, etc.), SQLJ (for Java)
++ **Procedure Call Approach**: e.g. JDBC for Java, ODBC (Open Databse Connectivity) for other programming languages as API’s (application programming interfaces)
++ **Database Programming Language Approach**: e.g. ORACLE has PL/SQL, a programming language based on SQL; language incorporates SQL and its data types as integral components
++ **Scripting Languages**: PHP (client-side scripting) and Python (server-side scripting) are used to write database programs.
 
-## 2.3.2 Database Interfaces
+### User-Friendly DBMS Interfaces
++ Menu-based (Web-based), popular for browsing on the web
++ Forms-based, designed for naïve users used to filling in entries on a form
++ Graphics-based 
+  - Point and Click, Drag and Drop, etc.
+  - Specifying a query on a schema diagram
++ Natural language: requests in written English
++ Combinations of the above:
+  - For example, both menus and forms used extensively in Web database interfaces
+
+### Other DBMS Interfaces
++ Natural language: free text as a query
++ Speech : Input query and Output response
++ Web Browser with keyword search
++ Parametric interfaces, e.g., bank tellers using function keys.
++ Interfaces for the DBA:
+  - Creating user accounts, granting authorizations
+  - Setting system parameters
+  - Changing schemas or access paths
+
 
 # 2.4 The database system enviroment
 
