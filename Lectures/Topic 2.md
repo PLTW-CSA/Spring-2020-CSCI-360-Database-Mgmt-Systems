@@ -180,25 +180,176 @@
 # 2.4 The database system enviroment
 
 ## 2.4.1 DBMS Component Modules
++ Typical DBMS Component Modules
+
+![Typical DBMS Component Modules](http://secure.tutorsglobe.com/CMSImages/1176_DBMS%20component%20modules.jpg)
+
 
 ## 2.4.2 Database System Utilities
++ To perform certain functions such as:
+  - Loading data stored in files into a database. Includes data conversion tools.
+  - Backing up the database periodically on tape.
+  - Reorganizing database file structures.
+  - Performance monitoring utilities.
+  - Report generation utilities.
+  - Other functions, such as sorting, user monitoring, data compression, etc.
 
 ## 2.4.3 Tools, Application Enviroments, and Communication Facilities
-
+### other tools
++ Data dictionary / repository:
+  - Used to store schema descriptions and other information such as design decisions, application program descriptions, user information, usage standards, etc.
+  - Active data dictionary is accessed by DBMS software and users/DBA.
+  - Passive data dictionary is accessed by users/DBA only.
++ Application Development Environments and CASE (computer-aided software engineering) tools:
++ Examples:
+  - PowerBuilder (Sybase)
+  - JBuilder (Borland)
+  - JDeveloper 10G (Oracle)
 # 2.5 Centralized and Client/Server Architectures for DMBSs
+
 ## 2.5.1 Centralized DBMSs Architecture
++ Combines everything into single system including- DBMS software, hardware, application programs, and user interface processing software.
++ User can still connect through a remote terminal – however, all processing is done at centralized site.
++ A Physical Centralized Architecture
+
+![A Physical Centralized Architecture](http://2.bp.blogspot.com/-TfWhrxZMqrQ/Up857oMz5JI/AAAAAAAAB_E/rnQSpwM4Lw8/s1600/Centralized+and+Client-Server+DBMS+Architectures.PNG)
+
 ## 2.5.2 Basic Client/Server Architectures
+### Basic 2-tier Client-Server Architectures
++ Specialized Servers with Specialized functions
+  - Print server
+  - File server
+  - DBMS server
+  - Web server
+  - Email server
++ Clients can access the specialized servers as needed
+### Logical two-tier client server architecture
+
+![Logical two-tier client server architecture](https://slideplayer.com/slide/5743807/19/images/8/Logical+two-tier+client%2Fserver+architecture.jpg)
+### Clients
++ Provide appropriate interfaces through a client software module to access and utilize the various server resources. 
++ Clients may be diskless machines or PCs or Workstations with disks with only the client software installed.
++ Connected to the servers via some form of a network.
+  - (LAN: local area network, wireless network, etc.)
+### DBMS Server
++ Provides database query and transaction services to the clients
++ Relational DBMS servers are often called SQL servers, query servers, or transaction servers
++ Applications running on clients utilize an Application Program Interface (API) to access server databases via standard interface such as:
+  - ODBC: Open Database Connectivity standard
+  - JDBC: for Java programming access
 ## 2.5.3 Two-Tier Client/Server Architectures for dmbsS
++ Client and server must install appropriate client module and server module software for ODBC or JDBC
++ A client program may connect to several DBMSs, sometimes called the data sources.
++ In general, data sources can be files or other non-DBMS software that manages data.
++ See Chapter 10 for details on Database Programming
 ## 2.5.4 Three-Tier and n-Tier Architectures for Web Applications
++ Common for Web applications
++ Intermediate Layer called Application Server or Web Server: 
+  -Stores the web connectivity software and the business logic part of the application used to access the corresponding data from the database server
+  - Acts like a conduit for sending partially processed data between the database server and the client.
++ Three-tier Architecture Can Enhance Security: 
+  - Database server only accessible via middle tier
+  - Clients cannot directly access database server
+  - Clients contain user interfaces and Web browsers
+  - The client is typically a PC or a mobile device connected to the Web
   
+ ![Three-tier client-server architecture](http://3.bp.blogspot.com/-lIXbNh7Eq4k/Up88ssZfJxI/AAAAAAAAB_Y/L9LA8K5ltwQ/s1600/Three+Tier+Client-Server+Architecture.PNG) 
+ 
+ ### Classification of DBMSs
+ + Based on the data model used
+  - Legacy: Network, Hierarchical.
+  - Currently Used: Relational, Object-oriented, Object-relational
+  - Recent Technologies: Key-value storage systems, NOSQL systems: document based, column-based, graph-based and key-value based. Native XML DBMSs.
++ Other classifications
+  - Single-user (typically used with personal computers) vs. multi-user (most DBMSs).
+  - Centralized (uses a single computer with one database) vs. distributed (multiple computers, multiple DBs) 
+ 
+### Variations of Distributed DBMSs (DDBMSs)
++ Homogeneous DDBMS
++ Heterogeneous DDBMS
++   Federated or Multidatabase Systems
+  - Participating Databases are loosely coupled with high degree of autonomy.
++ Distributed Database Systems have now come to be known as client-server based database systems because:
+  - They do not support a totally distributed environment, but rather a set of database servers supporting a set of clients.
+### Cost considerations for DBMSs
++ Cost Range: from free open-source systems to configurations costing millions of dollars
++ Examples of free relational DBMSs: MySQL, PostgreSQL, others
++ Commercial DBMS offer additional specialized modules, e.g. time-series module, spatial data module, document module, XML module
+  - These offer additional specialized functionality when purchased separately
+  - Sometimes called cartridges (e.g., in Oracle) or blades
++ Different licensing options: site license, maximum number of concurrent users (seat license), single user, etc.
+
+### Other Considerations
++ Type of access paths within database system
+  - E.g.- inverted indexing based (ADABAS is one such system).Fully indexed databases provide access by any keyword (used in search engines)
++ General Purpose vs. Special Purpose
+  - E.g.- Airline Reservation systems or many others-reservation systems for hotel/car etc.  Are special purpose OLTP (Online Transaction Processing Systems)
   
+# History of Data Models (Additional Material)
++ Network Model
++ Hierarchical Model
++ Relational Model
++ Object-oriented Data Models
++ Object-Relational Models
+
+## Network Model:
++ History of Network Model:
+  - The first network DBMS was implemented by Honeywell in 1964-65 (IDS System).
+  - Adopted heavily due to the support by CODASYL (Conference on Data Systems Languages) (CODASYL - DBTG report of 1971).
+  - Later implemented in a large variety of systems - IDMS (Cullinet - now Computer Associates), DMS 1100 (Unisys), IMAGE (H.P. (Hewlett-Packard)), VAX -DBMS (Digital Equipment Corp., next COMPAQ, now H.P.). 
++  Advantages:
+  - Network Model is able to model complex relationships and represents semantics of add/delete on the relationships.
+  - Can handle most situations for modeling using record types and relationship types.
+  - Language is navigational; uses constructs like FIND, FIND member, FIND owner, FIND NEXT within set, GET, etc. 
+    + Programmers can do optimal navigation through the database.
++ Disadvantages:
+  - Navigational and procedural nature of processing
+  - Database contains a complex array of pointers that thread through a set of records.
+    + Little scope for automated “query optimization”
   
-  
-  
-  
-  
-  
-  
-  
-  
-  
+## Data Models
+### Hierarchical Data Model:
++ Initially implemented in a joint effort by IBM and North American Rockwell around 1965. Resulted in the IMS family of systems.
++ IBM’s IMS product had (and still has) a very large customer base worldwide
++ Hierarchical model was formalized based on the IMS system
++ Other systems based on this model: System 2k (SAS inc.)
++ Advantages:
+  - Simple to construct and operate
+  - Corresponds to a number of natural hierarchically organized domains, e.g., organization (“org”) chart
+  - Language is simple: 
+    + Uses constructs like GET, GET UNIQUE, GET NEXT, GET NEXT WITHIN PARENT, etc.
++ Disadvantages:
+  - Navigational and procedural nature of processing
+  - Database is visualized as a linear arrangement of records
+  - Little scope for "query optimization"
+### Relational Model: 
++ Proposed in 1970 by E.F. Codd (IBM), first commercial system in 1981-82.
++ Now in several commercial products (e.g. DB2, ORACLE, MS SQL Server, SYBASE, INFORMIX).
++ Several free open source implementations, e.g. MySQL, PostgreSQL
++ Currently most dominant for developing database applications.
++ SQL relational standards: SQL-89 (SQL1), SQL-92 (SQL2), SQL-99, SQL3, …
++ Chapters 5 through 11 describe this model in detail
+### Object-oriented Data Models:
++ Several models have been proposed for implementing in a database system. 
++ One set comprises models of persistent O-O Programming Languages such as C++ (e.g., in OBJECTSTORE or VERSANT), and Smalltalk (e.g., in GEMSTONE).
++ Additionally, systems like O2, ORION (at MCC - then ITASCA), IRIS (at H.P.- used in Open OODB).
++ Object Database Standard: ODMG-93, ODMG-version 2.0, ODMG-version 3.0.
++ Chapter 12 describes this model.
+### Object-Relational Models: 
++ The trend to mix object models with relational was started with Informix Universal Server.
++ Relational systems incorporated concepts from object databases leading to object-relational.
++ Exemplified in the versions of Oracle, DB2, and SQL Server and other DBMSs.
++ Current trend by Relational DBMS vendors is to extend relational DBMSs with capability to process XML, Text and other data types.
++ The term “Object-relational” is receding in the marketplace.
+
+# Chapter Summary
++ Data Models and Their Categories
++ Schemas, Instances, and States
++ Three-Schema Architecture
++ Data Independence
++ DBMS Languages and Interfaces
++ Database System Utilities and Tools
++ Database System Environment
++ Centralized and Client-Server Architectures
++ Classification of DBMSs
++ History of Data Models
