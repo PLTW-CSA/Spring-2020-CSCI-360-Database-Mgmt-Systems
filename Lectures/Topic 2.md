@@ -203,7 +203,7 @@
 ## 2.4.2 Database System Utilities
 + To perform certain functions such as:
   - Loading data stored in files into a database. Includes data conversion tools.
-  - Backing up the database periodically on tape.
+  - Backing up the database periodically on tape or other storage medium.
   - Reorganizing database file structures.
   - Performance monitoring utilities.
   - Report generation utilities.
