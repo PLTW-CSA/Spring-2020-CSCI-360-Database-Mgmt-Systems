@@ -93,8 +93,10 @@
     + Typically uses a physical data model.
   - Conceptual schema at the conceptual level to describe the structure and constraints for the whole database for a community of users. 
     + Uses a conceptual or an implementation data model.
-+ External schemas at the external level to describe the various user views. 
-  - Usually uses the same data model as the conceptual schema.
+    + Hides the details of physical storage structures
+    + Concentrates on describing entities, data types, relatonships, user operations, and constraints.
+  - External schemas at the external level to describe the various user views. 
+    + Usually uses the same data model as the conceptual schema.
   
   
 
