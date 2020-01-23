@@ -182,7 +182,20 @@
 # 2.4 The database system enviroment
 
 ## 2.4.1 DBMS Component Modules
-+ Typical DBMS Component Modules
++ Top part: the various users of the database enviroment and their interfaces.
+  - DBA: work on defining the database and tuning it by making changes to its definition using the DDL and other privileged commands
+    + DDL compiler: prcesses chema definitions, specified in the DDL, and stores descriptions of the schemas(meta-data) in the dmbs catalog
+  - casual users: work with interactive interfaces to formulate queries
+  - application programmers: create programs using some host programming languages
+  - parametric users: do data entry work by supplying parameters to predefined transactions
+    + e.g. A bank payment transaction where the account number, payee, and amount may be supplied as parameters.
++ Lower part: internal modules of the DBMS responsible for sotrage of data and processing of transactions
+  - runtime database processor executes
+    + the privileged commands
+    + the executable query plans
+    + the canned transaction with runtime parameters
+  - stored data manager: uses basic operating system services for carrying out low-level input/output(read/write) operations between the disk and main memory.
+    
 
 ![Typical DBMS Component Modules](http://secure.tutorsglobe.com/CMSImages/1176_DBMS%20component%20modules.jpg)
 
