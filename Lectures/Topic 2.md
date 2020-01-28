@@ -184,12 +184,12 @@
 ## 2.4.1 DBMS Component Modules
 + Top part: the various users of the database enviroment and their interfaces.
   - DBA: work on defining the database and tuning it by making changes to its definition using the DDL and other privileged commands
-    + DDL compiler: prcesses chema definitions, specified in the DDL, and stores descriptions of the schemas(meta-data) in the dmbs catalog
+    + DDL compiler: prcesses chema definitions, specified in the DDL, and stores descriptions of the schemas(meta-data) in the DBMS catalog
   - casual users: work with interactive interfaces to formulate queries
   - application programmers: create programs using some host programming languages
   - parametric users: do data entry work by supplying parameters to predefined transactions
     + e.g. A bank payment transaction where the account number, payee, and amount may be supplied as parameters.
-+ Lower part: internal modules of the DBMS responsible for sotrage of data and processing of transactions
++ Lower part: internal modules of the DBMS responsible for storage of data and processing of transactions
   - runtime database processor executes
     + the privileged commands
     + the executable query plans
@@ -201,7 +201,7 @@
 
 
 ## 2.4.2 Database System Utilities
-+ To perform certain functions such as:
++ To help the DBA manage the database system and perform certain functions such as:
   - Loading data stored in files into a database. Includes data conversion tools.
   - Backing up the database periodically on tape or other storage medium.
   - Reorganizing database file structures.
@@ -210,16 +210,17 @@
   - Other functions, such as sorting, user monitoring, data compression, etc.
 
 ## 2.4.3 Tools, Application Enviroments, and Communication Facilities
-### other tools
+### other tools to database designer, users, and the DBMS
 + Data dictionary / repository:
   - Used to store schema descriptions and other information such as design decisions, application program descriptions, user information, usage standards, etc.
   - Active data dictionary is accessed by DBMS software and users/DBA.
   - Passive data dictionary is accessed by users/DBA only.
 + Application Development Environments and CASE (computer-aided software engineering) tools:
-+ Examples:
-  - PowerBuilder (Sybase)
-  - JBuilder (Borland)
-  - JDeveloper 10G (Oracle)
+  - CASE tools are used in design phase of database system.
+  - Examples:
+    + PowerBuilder (Sybase)
+    + JBuilder (Borland)
+    + JDeveloper 10G (Oracle)
 # 2.5 Centralized and Client/Server Architectures for DMBSs
 
 ## 2.5.1 Centralized DBMSs Architecture
@@ -252,7 +253,7 @@
 + Applications running on clients utilize an Application Program Interface (API) to access server databases via standard interface such as:
   - ODBC: Open Database Connectivity standard
   - JDBC: for Java programming access
-## 2.5.3 Two-Tier Client/Server Architectures for dmbsS
+## 2.5.3 Two-Tier Client/Server Architectures for DBMSs
 + Client and server must install appropriate client module and server module software for ODBC or JDBC
 + A client program may connect to several DBMSs, sometimes called the data sources.
 + In general, data sources can be files or other non-DBMS software that manages data.
@@ -270,23 +271,23 @@
   
  ![Three-tier client-server architecture](http://3.bp.blogspot.com/-lIXbNh7Eq4k/Up88ssZfJxI/AAAAAAAAB_Y/L9LA8K5ltwQ/s1600/Three+Tier+Client-Server+Architecture.PNG) 
  
- ### Classification of DBMSs
- + Based on the data model used
+ # 2.6 Classification of DBMSs
+ + Based on the **data model** used
   - Legacy: Network, Hierarchical.
   - Currently Used: Relational, Object-oriented, Object-relational
-  - Recent Technologies: Key-value storage systems, NOSQL systems: document based, column-based, graph-based and key-value based. Native XML DBMSs.
+  - Recent Technologies: Key-value storage systems, NOSQL systems: document based, column-based, graph-based and key-value based, Native XML DBMSs.
 + Other classifications
-  - Single-user (typically used with personal computers) vs. multi-user (most DBMSs).
+  - Single-user (typically used with personal computers) vs. multi-user (most DBMSs).
   - Centralized (uses a single computer with one database) vs. distributed (multiple computers, multiple DBs) 
  
-### Variations of Distributed DBMSs (DDBMSs)
+## Variations of Distributed DBMSs (DDBMSs)
 + Homogeneous DDBMS
 + Heterogeneous DDBMS
 +   Federated or Multidatabase Systems
   - Participating Databases are loosely coupled with high degree of autonomy.
 + Distributed Database Systems have now come to be known as client-server based database systems because:
   - They do not support a totally distributed environment, but rather a set of database servers supporting a set of clients.
-### Cost considerations for DBMSs
+## Cost considerations for DBMSs
 + Cost Range: from free open-source systems to configurations costing millions of dollars
 + Examples of free relational DBMSs: MySQL, PostgreSQL, others
 + Commercial DBMS offer additional specialized modules, e.g. time-series module, spatial data module, document module, XML module
@@ -300,7 +301,7 @@
 + General Purpose vs. Special Purpose
   - E.g.- Airline Reservation systems or many others-reservation systems for hotel/car etc.  Are special purpose OLTP (Online Transaction Processing Systems)
   
-# History of Data Models (Additional Material)
+# 2.7 History of Data Models (Additional Material)
 + Network Model
 + Hierarchical Model
 + Relational Model
