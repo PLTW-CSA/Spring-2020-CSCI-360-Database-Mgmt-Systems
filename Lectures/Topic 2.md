@@ -282,7 +282,9 @@
  
 ## Variations of Distributed DBMSs (DDBMSs)
 + Homogeneous DDBMS
+  - use the same DBMS software at all the sites.
 + Heterogeneous DDBMS
+  - use different DBMS software at each site.
 +   Federated or Multidatabase Systems
   - Participating Databases are loosely coupled with high degree of autonomy.
 + Distributed Database Systems have now come to be known as client-server based database systems because:
