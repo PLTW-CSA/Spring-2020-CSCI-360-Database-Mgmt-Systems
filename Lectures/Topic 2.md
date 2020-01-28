@@ -371,3 +371,6 @@
 + Centralized and Client-Server Architectures
 + Classification of DBMSs
 + History of Data Models
+
+# [Homework 2](https://github.com/ZhangNingSAU/Spring-2020-CSCI-360-Database-Mgmt-Systems/blob/master/Homework/HW2.md)
+
