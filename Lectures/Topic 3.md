@@ -169,6 +169,11 @@
 + A special null value is used to represent values that are unknown or inapplicable to certain tuples
 
 ### Relation with Different Order
+
+
+## Constraint
+
+### Relational Integrity Constraints
 + Constraints: are conditions that must hold on all valid relation states
 + Three main types of constraints in the relational model:
   - **Key** constraints
@@ -176,7 +181,8 @@
   - **Referential** integrity constraints
 + Another implicit constraint is the domain constraint
   - Every value in a tuple must be from the domain of its attribute (or it could be null, if allowed for that attribute)
-#### Key Constraints
+  
+### Key Constraints
 + **Superkey** of R: a set of attributes SK of R with the following condition
   - No two tuples in any valid relation state r(R) will have the same value for SK
   - That is, for any distinct tuples t1 and t2 in r(R), t1[SK] ≠ t2[SK]
@@ -195,19 +201,150 @@
     + Any key is a superkey (but not vice versa)
     + Any set of attributes that includes a key is a superkey
     + A minimal superkey is also a key
++ **Primary Key**
+  - If a relation has several candidate keys, one is chosen arbitrarily to be the **Primary Key**
+    + The primary key attributes are underlined
+  - For the CAR relation schema: **CAR(State, Reg ,SerialNo, Make, Model, Year)**
+    + SerialNo is chosen as the primary key
+  - The primary key provides the tuple identity, i.e. uniquely identify each tuple in a relation
+  - Primary key can be used to reference the tuple from another tuple
+    + General rule: Choose as primary key the smallest of the candidate keys (in terms of size)
+    + Not always applicable - choice is sometimes subjective
     
-####    
-
-## Constraint
-### Relational Integrity Constraints
-
-### Key Constraints
+  - Example:
+    ![Primary Key](https://slideplayer.com/slide/13847525/85/images/4/CAR+table+with+two+candidate+keys+%E2%80%93+LicenseNumber+chosen+as+Primary+Key.jpg)
+    
 ### Entity Integrity
++ Entity Integrity: The primary key attributes PK of each relation schema R in S cannot have null values in any tuple of r(R).
+  - This is because primary key values are used to identify the individual tuples.
+  - t[PK] ≠ null for any tuple t in r(R)
+  - If PK has several attributes, null is not allowed in any of these attributes
++ **Note**: Other attributes of R may be constrained to disallow null values, even though they are not members of the primary key.
+
 ### Referential Integrity
++ Referential Integrity
+  - A constraint involving two relations
+  - Used to specify a relationship among tuples in two relations
+    + The referencing relation and the referenced relation.
+    
++ Note: Entity integrity constraints involve a single relation
+
++ Tuples in the **referencing relation R1** have attributes FK (called **foreign key** attributes) that reference the **primary key** attributes PK of the **referenced relation R2**.
+  - A tuple t1 in R1 is said to reference a tuple t2 in R2 if t1[FK] = t2[PK].
+  - Foreign key and corresponding primary key must have the same domain
+  
++ A referential integrity constraint can be displayed in a relational database schema as a directed arc from R1.FK to R2.
+#### Referential Integrity Constraint
++ The value in the foreign key column (or columns) FK of the the referencing relation R1 can be either:
+  - a value of an existing primary key value of a corresponding primary key PK in the referenced relation R2, or
+  - a **null**
++ In case (2), the FK in R1 should not be a part of its own primary key  
+  
+  
+  
 ### Semantic Integrity Constraints
++ based on application semantics and cannot be expressed by the model per se
++ Example: “the max. no. of hours per employee for all projects he or she works on is 56 hrs per week”
++ A constraint specification language may have to be used to express these
++ SQL-99 allows triggers and ASSERTIONS to express for some of these
+
+
+
+
 ## Relational Schema Diagram
++ Each relation schema can be displayed as a row of attribute names
++ The name of the relation is written above the attribute names 
++ The primary key attribute (or attributes) will be underlined
++ A foreign key (referential integrity) constraints is displayed as a directed arc (arrow) from the foreign key attributes to the referenced table
+  - Can also point the primary key of the referenced relation for clarity
+  
+  ![Relational Schema Diagram](https://d2vlcm61l7u1fs.cloudfront.net/media%2F93e%2F93e6cf1b-5154-4595-8365-539c48fc52fc%2FphpfX6mxR.png)
+
+
+
+
+
+
+
+
+
+
+
 ## Operations on Relation 
 ### Concepts
++ Database State
+  - Each relation will have many tuples in its current relation state
+  - The relational database state is a union of all the individual relation states
+  - Whenever the database is changed, a new state arises
+  
+  ![](https://d2vlcm61l7u1fs.cloudfront.net/media%2F605%2F6052c100-6ddb-4570-8c74-bff61d413d87%2FphpDnEFxK.png)
+  
++ Operations on Relation
+  - Basic operations for changing the database
+    + Retrieval operations
+    + Update operations
+      - **INSERT** a new tuple in a relation
+      - **DELETE** an existing tuple from a relation 
+      - **MODIFY** an attribute of an existing tuple
+  - Integrity constraints should not be violated by the update operations.
+  - Several update operations may have to be grouped together.
+  - Updates may **propagate** to cause other updates automatically. This may be necessary to maintain integrity constraints.
+  
+####   INSERT Operations
++ Insert a new tuple **t** into a relation **R**
++ Denoted by **Insert t into R**
++ Examples
+  - **Insert <‘Cecilia’, ‘F’, ‘Kolonsky’, ‘677678989’, ‘1960-04-05’, ‘6357 Windy Lane, Katy, TX’, F, 28000, NULL, 4> into EMPLOYEE**
+  - This insertion satisfies all constraints, so it is acceptable.
+#### DELETE Operations
+
++ Delete tuple(s) that satisfy some condition from a relation R
++ Atomic condition is specified in the form of: Attribute = value
++ Examples
+  - Delete the **WORKS_ON** tuple with **Essn=’99988777’ and Pno=10**
+
+#### UPDATE Operations
++ Change the values of one or more attributes in tuple(s) that satisfy some condition of some relation R
++ Atomic condition is specified in the form of: Attribute = value
++ Examples
+  - Update the **Salary** of the **EMPLOYEE** tuple with **Essn=’99988777’** to **28000**
+
+
+
+
 ### Constraint Violation
++ Update operation may violate constraints discussed previously
++ **INSERT/UPDATE**
+  - Insert/change a tuple such that value of some attribute(s) is not of the specified attribute domain (**Domain Constraint Violation**)
+  - Insert/change a tuple such that the primary key is not unique (**Key Constraint Violation**)
+  - Insert/change a tuple such that the primary key is NULL (**Entity Integrity Violation**)
+  - Insert/change a tuple such that values of foreign key do not exist at the referenced relation (**Referential Integrity Constraint Violation**)
+  - Change a tuple such that the primary key is referenced by tuples of another relation (**Referential Integrity Constraint Violation**)
   
++ **DELETE**
+  - Delete a tuple such that the primary key is referenced by tuples of another relation (**Referential Integrity Constraint**)
+
+#### Actions on Constraint Violation
+
++ In case of integrity violation, several actions can be taken
+  - Cancel the operation that causes the violation (RESTRICT or REJECT option)
+  - Perform the operation but inform the user of the violation
+  - Trigger additional updates so the violation is corrected (CASCADE option, SET NULL option)
+  - Execute a user-specified error-correction routine
+#### Actions on INSERT
++ If a INSERT operation violates any of the constraints, it is REJECTED.
++ Give examples INSERT operations that violate different constraints
+
+#### Actions on DELETE
++ DELETE operation may violate only referential integrity constraint
++ If the primary key value of the tuple being deleted is referenced from other tuples in the database, it can be remedied by the following actions:
+  - **REJECT** the deletion
+  - **CASCADE** – propagate the new primary key value into the foreign keys of the referencing tuples
+  - **SET NULL** - set the foreign keys of the referencing tuples to NULL
   
++ One of the above options must be specified during database design for each foreign key constraint
+#### Actions on UPDATE
++ The action to handle violations caused by UPDATE is similar to INSERT and DELETE operations.
+
+
+
