@@ -1,7 +1,7 @@
 # CSCI 360 Spring 2020
 # Dr. Ning Zhang
 
-# Topic 3: The Entity-Relationship Model
+# Topic 3: The Entity-Relationship Model(Chapter 5)
 
 ## Outline
 + Concept
@@ -70,8 +70,8 @@
 + The special value **NULL** can be a value of any attribute
 + The NULL value can have several meanings
   - value unknown
-    + For example: The home phone of student John is NULL
-  - value value exists but is not available
+    + For example: The home phone of student Joe is NULL
+  - value exists but is not available
     + For example: The age of student John is NULL
   - attributes does not apply to this tuple 
     + For example, Visa_Status attribute can only be applied to international students.
@@ -193,6 +193,7 @@
   - A key is a superkey K such that removal of any attribute from K results in a set of attributes that is not a superkey (does not possess the superkey uniqueness property)
 + Example
   - Consider the CAR relation schema: CAR(State, Reg , SerialNo, Make, Model, Year)
+  ![superkey](https://slideplayer.com/slide/13847525/85/images/4/CAR+table+with+two+candidate+keys+%E2%80%93+LicenseNumber+chosen+as+Primary+Key.jpg)
   - CAR has two keys:
     + Key1 = {State, Reg#}
     + Key2 = {SerialNo}
