@@ -54,6 +54,7 @@
   - attribute cannot be multi-valued attribute
     + For example: the value of an attribute can be an account number, but cannot be a set of account numbers.
 + attribute cannot be composite attribute
+  - [Composite attribute example](http://www.exploredatabase.com/2017/02/What-is-composite-attribute-in-er-model-give-example.html)
 + In the formal model, the indivisible property is called to be atomic.
 
 ### Informal Definition: Attribute Data Type
