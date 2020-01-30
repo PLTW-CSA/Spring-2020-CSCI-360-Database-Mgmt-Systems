@@ -70,7 +70,7 @@
 + The special value **NULL** can be a value of any attribute
 + The NULL value can have several meanings
   - value unknown
-    + For example: The home phone of student Dick is NULL
+    + For example: The home phone of student John is NULL
   - value value exists but is not available
     + For example: The age of student John is NULL
   - attributes does not apply to this tuple 
