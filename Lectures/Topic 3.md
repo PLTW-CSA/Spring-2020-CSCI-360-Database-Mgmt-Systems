@@ -193,7 +193,7 @@
   - A key is a superkey K such that removal of any attribute from K results in a set of attributes that is not a superkey (does not possess the superkey uniqueness property)
 + Example
   - Consider the CAR relation schema: CAR(State, Reg , SerialNo, Make, Model, Year)
-  ![superkey](https://slideplayer.com/slide/13847525/85/images/4/CAR+table+with+two+candidate+keys+%E2%80%93+LicenseNumber+chosen+as+Primary+Key.jpg)
+  
   - CAR has two keys:
     + Key1 = {State, Reg#}
     + Key2 = {SerialNo}
