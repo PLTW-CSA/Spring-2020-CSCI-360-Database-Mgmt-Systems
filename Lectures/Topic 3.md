@@ -249,8 +249,9 @@
 + Example: “the max. no. of hours per employee for all projects he or she works on is 56 hrs per week”
 + A constraint specification language may have to be used to express these
 + SQL-99 allows triggers and ASSERTIONS to express for some of these
+<!----
 + [See here](https://www.ibm.com/support/knowledgecenter/SSGU8G_14.1.0/com.ibm.sqlt.doc/ids_sqt_254.htm)
-
+--->
 
 
 
