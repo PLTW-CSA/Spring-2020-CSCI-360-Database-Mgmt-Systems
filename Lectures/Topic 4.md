@@ -74,8 +74,8 @@
 + SELECT operator is applied to **a single relation**
 + SELECT operator is applied to **each tuple individually**
 + For SELECT operation σ<sub>\<selection condition\></sub>(R), < selection condition > is one of the following
-  - < attributename >< comparisonoperator >< constantvalue >
-  - < attributename >< comparisonoperator >< attributename >
+  - < attributename >< comparison operator >< constantvalue >
+  - < attributename >< comparison operator >< attributename >
   - arbitrarily connected by the above two forms using Boolean operators such as AND, OR, and NOT.
 + If the domain of an attribute is **ordered values**, the comparison operators that can be applied to the attribute are:=,<,≤,>,≥,and ≠.
 + If the domain of an attribute is **unordered values**, the comparison operators that can be applied to the attribute are: =, and ≠. 
