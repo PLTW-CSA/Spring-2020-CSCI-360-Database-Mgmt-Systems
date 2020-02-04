@@ -280,7 +280,7 @@
   - The relational database state is a union of all the individual relation states
   - Whenever the database is changed, a new state arises
   
-  ![](https://d2vlcm61l7u1fs.cloudfront.net/media%2F605%2F6052c100-6ddb-4570-8c74-bff61d413d87%2FphpDnEFxK.png)
+  ![Database state](https://d2vlcm61l7u1fs.cloudfront.net/media%2F605%2F6052c100-6ddb-4570-8c74-bff61d413d87%2FphpDnEFxK.png)
   
 + Operations on Relation
   - Basic operations for changing the database
