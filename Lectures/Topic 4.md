@@ -1,0 +1,90 @@
+# CSCI 360 Spring 2020
+# Dr. Zhang
+# Topic 4: The Relational Algebra and Calculus
+
+# Outline
++ Relational Algebra
+  - Unary Relational Operations
+  - Relational Algebra Operations From Set Theory Binary Relational Operations
+  - Additional Relational Operations
+  - Examples of Queries in Relational Algebra
++ Relational Calculus
+  - Tuple Relational Calculus 
+  - Domain Relational Calculus
++ Example Database Application (COMPANY)
++ Overview of the QBE language (appendix D)
+
+
+
+
+## Relational Algebra
+
+### History
++ Muhammad ibn Musa al-Khwarizmi (800-847 CE) wrote a book titled al-jabr about arithmetic of variables
+  - Book was translated into Latin
+  - Its title (al-jabr) gave Algebra its name.
++ Al-Khwarizmi called variables “shay”
+  - “Shay” is Arabic for “thing”
+  - Spanish transliterated “shay” as “xay” (“x” was “sh” in Spain)
++ Where does the word Algorithm come from?
+  - Algorithm originates from “al-Khwarizmi”
+  - Reference: PBS (http://www.pbs.org/empires/islam/innoalgebra.html)
+  
+### Overview
+
++ Relational algebra is the basic set of operations for the relational model
++ These operations enable a user to specify basic retrieval requests (or queries)
++ The result of an operation is a new relation, which may have been formed from one or more input relations
+  - This property makes the algebra “closed” (all objects in relational algebra are relations)
+  - The new relations can be further manipulated using operations of the same algebra
++ A sequence of relational algebra operations forms a **relational algebra expression**
+  - The result of a relational algebra expression is also a relation that represents the result of a database query (or retrieval request)
+  
++ Relational Algebra consists of several groups of operations
+  - Unary Relational Operations
+    + **SELECT** (symbol: σ (sigma))
+    + **PROJECT** (symbol: π (pi))
+    + **RENAME** (symbol: ρ (rho))
++ Relational Algebra Operations From Set Theory
+  - **UNION** ( ∪ ), **INTERSECTION** ( ∩ ), **DIFFERENCE** (or MINUS, −)
+  - **CARTESIAN PRODUCT** ( × )
++ Binary Relational Operations
+  - **JOIN** (several variations of JOIN exist）
+  - **DIVISION**
++ Additional Relational Operations
+  - **OUTER JOINS**, **OUTER UNION**
+  - **AGGREGATE FUNCTIONS** (These compute summary of information: for example, SUM, COUNT, AVG, MIN, MAX）
+
+#### COMPANY Database Schema
++ All examples discussed below refer to the COMPANY database shown here.
+  
+ ![company](https://d2vlcm61l7u1fs.cloudfront.net/media%2F500%2F500decc6-d150-4a9e-bca8-b1c219adb1de%2FphpahrxoM.png)
+  
+ #### COMPANY Database State
+ 
+ ![state](https://d2vlcm61l7u1fs.cloudfront.net/media%2F605%2F6052c100-6ddb-4570-8c74-bff61d413d87%2FphpDnEFxK.png)
+ 
+ ### Unary Relational Operations
+ #### SELECT
+ + The SELECT operation is used to select a subset of the tuples from a relation based on a selection condition, denoted by **σ<selection condition>(R)** where
+  - the symbol σ (sigma) is used to denote the select operator
+  - the selection condition is a Boolean (conditional) expression specified on the attributes of relation R
+  - tuples that make the condition true are selected, i.e., appear in the result of the operation
+  - tuples that make the condition false are filtered out, i.e., discarded from the result of the operation
++ SELECT operator is applied to **a single relation**
++ SELECT operator is applied to **each tuple individually**
++ For SELECT operation σ<selection condition>(R), < selection condition > is one of the following
+  - < attributename >< comparisonoperator >< constantvalue >
+  - < attributename >< comparisonoperator >< attributename >
+  - arbitrarily connected by the above two forms using Boolean operators such as AND, OR, and NOT.
++ If the domain of an attribute is **ordered values**, the comparison operators that can be applied to the attribute are:=,<,≤,>,≥,and ≠.
++ If the domain of an attribute is **unordered values**, the comparison operators that can be applied to the attribute are: =, and ≠. 
++ Some domains may allow additional types of comparison operators, such as SUBSTRING_OF for character strings.
+
++ examples:
+  - Select the EMPLOYEE tuples whose department number is 4: σ<sub>Dno=4</sub>(EMPLOYEE)
+
+
+  
+  
+  
