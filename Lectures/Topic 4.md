@@ -1,6 +1,6 @@
 # CSCI 360 Spring 2020
 # Dr. Ning Zhang
-# Topic 4: The Relational Algebra and Calculus
+# Topic 4: The Relational Algebra and Calculus (Chapter 8)
 
 # Outline
 + Relational Algebra
