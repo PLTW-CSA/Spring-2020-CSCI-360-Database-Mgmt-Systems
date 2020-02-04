@@ -244,7 +244,7 @@
   
   
   
-#### Semantic Integrity Constraints
+### Semantic Integrity Constraints
 + based on application semantics and cannot be expressed by the model per se
 + Example: “the max. no. of hours per employee for all projects he or she works on is 56 hrs per week”
 + A constraint specification language may have to be used to express these
