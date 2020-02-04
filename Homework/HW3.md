@@ -5,7 +5,7 @@
 
 # Q1: Suppose each of the following Update operations is applied directly to the database shown below. Discuss all integrity constraints violated by each operation, if any. Each operation is isolated from other operations. (5 points each. Total 55)
 
-![](https://www.google.com/url?sa=i&source=images&cd=&ved=2ahUKEwjSr_uqqbjnAhXNWM0KHevrBWAQjRx6BAgBEAQ&url=https%3A%2F%2Fwww.chegg.com%2Fhomework-help%2Fquestions-and-answers%2Fgiven-following-company-relational-database-state-please-display-result-query-specified-re-q23902248&psig=AOvVaw02NQ7TO_h7e4OHNQIWbkhp&ust=1580920334873172)
+![Q1](https://www.google.com/url?sa=i&source=images&cd=&ved=2ahUKEwjQ6sfEqbjnAhUDCs0KHUFKDcIQjRx6BAgBEAQ&url=http%3A%2F%2Fdb.gateoverflow.in%2F42206%2Fnavathe-fundamentals-database-systems-basic-sixth-edition&psig=AOvVaw02NQ7TO_h7e4OHNQIWbkhp&ust=1580920334873172)
 # Q2: What is the difference between logical data indenpendence and physical data indenpendence? (20 points)
 
 # Q3:  What is the difference between two-tier and three-tier client/server architectures? (20 points)
