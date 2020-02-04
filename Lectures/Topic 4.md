@@ -1,5 +1,5 @@
 # CSCI 360 Spring 2020
-# Dr. Zhang
+# Dr. Ning Zhang
 # Topic 4: The Relational Algebra and Calculus
 
 # Outline
@@ -89,10 +89,12 @@
 + **SELECT Operation Properties**
   - The SELECT operation σ<sub><selection condition></sub>(R) produces a relation S that has the same schema (same attributes) as R
   - SELECT σ is commutative
-    + σ<sub><condition1></sub>()
-  
-  - Because of commutativity property, a cascade (sequence) of SELECT operations may be applied in any order:
-  
+    + σ<sub>\<condition1\></sub>(σ<sub>\<condition2\></sub>(R)) = σ<sub>\<condition2\></sub>(σ<sub>\<condition1\><.sub>(R))
+  - Because of commutativity property, a cascade (sequence) of SELECT operations may be applied in any order: 
+    + σ<sub>\<condition1\></sub>(σ<sub>\<condition2\></sub>(σ<sub>\<condition3\></sub>(R))) = σ<sub>\<condition2\></sub>(σ<sub>\<condition3\></sub>(σ<sub>\<condition1\></sub>(R)))
+  - A cascade of SELECT operations may be replaced by a single selection with a conjunction of all the conditions:
+    + σ<sub>\<condition1\></sub>(σ<sub>\<condition2\></sub>(σ<sub>\<condition3\></sub>(R))) =σ <sub>\<condition1\> AND \<condition2\> AND \<condition3\></sub>(R)
+  - The number of tuples in the result of a SELECT is less than (or equal to) the number of tuples in the input relation R
 
   
   
