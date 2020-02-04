@@ -92,7 +92,7 @@
     + σ<sub><condition1></sub>(σ<sub><condition2></sub>(R)) = σ<sub><condition2></sub>(σ<sub><condition1></sub>(R))
   
   - Because of commutativity property, a cascade (sequence) of SELECT operations may be applied in any order:
-    + σ<sub><condition1></sub>(σ<sub><condition2></sub>(σ<sub><condition3></sub>(R))) = σ<sub><condition2></sub>(σ<sub><condition3></sub>(σ<sub><condition1></sub>(R)))
+  
 
   
   
