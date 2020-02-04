@@ -73,7 +73,7 @@
   - tuples that make the condition false are filtered out, i.e., discarded from the result of the operation
 + SELECT operator is applied to **a single relation**
 + SELECT operator is applied to **each tuple individually**
-+ For SELECT operation σ<selection condition>(R), < selection condition > is one of the following
++ For SELECT operation σ<sub>\<selection condition\></sub>(R), < selection condition > is one of the following
   - < attributename >< comparisonoperator >< constantvalue >
   - < attributename >< comparisonoperator >< attributename >
   - arbitrarily connected by the above two forms using Boolean operators such as AND, OR, and NOT.
