@@ -66,7 +66,7 @@
  
  ### Unary Relational Operations
  #### SELECT
- + The SELECT operation is used to select a subset of the tuples from a relation based on a selection condition, denoted by **σ<selection condition>(R)** where
+ + The SELECT operation is used to select a subset of the tuples from a relation based on a selection condition, denoted by σ<sub><selection condition></sub>(R) where
   - the symbol σ (sigma) is used to denote the select operator
   - the selection condition is a Boolean (conditional) expression specified on the attributes of relation R
   - tuples that make the condition true are selected, i.e., appear in the result of the operation
