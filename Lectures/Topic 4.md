@@ -83,7 +83,16 @@
 
 + examples:
   - Select the EMPLOYEE tuples whose department number is 4: σ<sub>Dno=4</sub>(EMPLOYEE)
-
+  - Select the employee tuples whose salary is greater than $30,000: σ<sub>SALARY>30,000</sub>(EMPLOYEE)
+  - Select the employee tuples who either work in department 4 and make over $25,000 per year, or work in department 5 and make over $30,000: σ<sub>(Dno=4 AND Salary>25000) OR (Dno=5 AND Salary>30000)</sub>(EMPLOYEE)
+  
++ **SELECT Operation Properties**
+  - The SELECT operation σ<sub><selection condition></sub>(R) produces a relation S that has the same schema (same attributes) as R
+  - SELECT σ is commutative
+    + σ<sub><condition1></sub>(σ<sub><condition2></sub>(R)) = σ<sub><condition2></sub>(σ<sub><condition1></sub>(R))
+  
+  - Because of commutativity property, a cascade (sequence) of SELECT operations may be applied in any order:
+    + σ<sub><condition1></sub>(σ<sub><condition2></sub>(σ<sub><condition3></sub>(R))) = σ<sub><condition2></sub>(σ<sub><condition3></sub>(σ<sub><condition1></sub>(R)))
 
   
   
