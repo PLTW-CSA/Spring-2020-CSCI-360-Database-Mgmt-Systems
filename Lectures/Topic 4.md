@@ -89,7 +89,7 @@
 + **SELECT Operation Properties**
   - The SELECT operation σ<sub><selection condition></sub>(R) produces a relation S that has the same schema (same attributes) as R
   - SELECT σ is commutative
-    + σ<sub><condition1></sub>(σ<sub><condition2></sub>(R)) = σ<sub><condition2></sub>(σ<sub><condition1></sub>(R))
+    + σ<sub><condition1></sub>()
   
   - Because of commutativity property, a cascade (sequence) of SELECT operations may be applied in any order:
   
