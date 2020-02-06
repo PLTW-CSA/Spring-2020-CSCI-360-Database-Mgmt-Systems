@@ -5,7 +5,8 @@
 # Outline
 + Relational Algebra
   - Unary Relational Operations
-  - Relational Algebra Operations From Set Theory Binary Relational Operations
+  - Relational Algebra Operations From Set Theory
+  - Binary Relational Operations
   - Additional Relational Operations
   - Examples of Queries in Relational Algebra
 + Relational Calculus
