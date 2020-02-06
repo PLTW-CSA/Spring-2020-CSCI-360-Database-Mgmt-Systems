@@ -121,6 +121,17 @@
 ![select project](http://www.brainkart.com/media/extra/OG7pA6u.jpg)
   
   
+#### Relational Algebra Expressions
++ Two ways to apply several relational algebra operations one after the other
+  - Relational algebra expression: nesting the operations
+  - Apply one operation at a time and create intermediate result relation
+    + Names must be given to the relations holding the intermediate results.
++ Example: To retrieve the first name, last name, and salary of all employees who work in department number 5, we must apply a select and a project operation
+  - Relational algebra expression: 
+    + π<sub>Fname,Lname,Salary</sub> (σ<sub>DNO=5</sub>(EMPLOYEE))
+  - Sequence of operations
+    + DEP5_EMPS ← σ<sub>DNO=5</sub>(EMPLOYEE)
+    + RESULT ← π<sub>Fname,Lname,Salary</sub> (DEP5_EMPS)
   
   
   
