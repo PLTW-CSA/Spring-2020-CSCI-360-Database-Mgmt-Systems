@@ -210,7 +210,7 @@
   - Denoted by R(A1, A2, ..., An) x S(B1, B2, ..., Bm)
   - Result is a relation Q with degree n + m attributes: Q(A1, A2, ..., An, B1, B2, ..., Bm), in that order.
   - The resulting relation state has one tuple for each combination of tuples-one from R and one from S.
-  - Hence, if R has nR tuples (denoted as |R| = n<sub>R</sub> ), and S has n<sub>S</sub> tuples, then R × S will have n<sub>R</sub> ∗ n<sub>S</sub> tuples
+  - Hence, if R has n<sub>R</sub> tuples (denoted as |R| = n<sub>R</sub> ), and S has n<sub>S</sub> tuples, then R × S will have n<sub>R</sub> ∗ n<sub>S</sub> tuples
   - The two operands do NOT have to be “type compatible”
 + Generally, CARTESIAN PRODUCT is **not a meaningful operation**
   - For example:
