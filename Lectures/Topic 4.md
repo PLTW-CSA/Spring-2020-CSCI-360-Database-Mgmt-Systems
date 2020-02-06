@@ -97,5 +97,12 @@
   - The number of tuples in the result of a SELECT is less than (or equal to) the number of tuples in the input relation R
 
   
-  
+#### PROJECT
++ PROJECT Operation keeps certain columns (attributes) from a relation and discards the other columns
+  - PROJECT creates a vertical partitioning
+    + The list of specified columns (attributes) is kept in each tuple
+    + The other attributes in each tuple are discarded
++ The general form of the project operation is: π<sbu>\<attribute list\></sub>(R) where
+  - π (pi) is the symbol used to represent the project operation
+  - <attribute list> is the desired list of attributes from relation R, seperated by comma(,)
   
