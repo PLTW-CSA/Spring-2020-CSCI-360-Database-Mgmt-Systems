@@ -111,8 +111,7 @@
 
 + **PROJECT Operation Properties**
   - The project operation removes any duplicate tuples
-    + This is because the result of the project operation must be a set of
-    + tuples. Mathematical sets do not allow duplicate elements.
+    + This is because the result of the project operation must be a set of tuples. Mathematical sets do not allow duplicate elements.
   - The number of tuples in the result of projection π<sub>list</sub>(R) always less or equal to the number of tuples in R
     + If the list of attributes includes a key of R, then the number of tuples in the result of PROJECT is equal to the number of tuples in R
   - PROJECT is NOT commutative
