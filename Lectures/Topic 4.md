@@ -228,8 +228,9 @@
     
   - RESULT will now contain the name of female employees and their dependents
   
-  ![](https://images.slideplayer.com/16/5113977/slides/slide_7.jpg)
-  ![](https://image3.slideserve.com/5731883/figure-6-5b-the-cartesian-product-cross-product-operation-l.jpg)
+  ![](https://slideplayer.com/slide/15218896/92/images/34/Figure+8.5+The+CARTESIAN+PRODUCT+%28CROSS+PRODUCT%29+operation..jpg)
+  ![](https://slideplayer.com/slide/15218896/92/images/35/Figure+8.5+%28continued%29+The+CARTESIAN+PRODUCT+%28CROSS+PRODUCT%29+operation..jpg)
+  ![](https://slideplayer.com/slide/12404110/74/images/36/Figure+8.5+%28continued%29+The+CARTESIAN+PRODUCT+%28CROSS+PRODUCT%29+operation..jpg)
   
   
   
