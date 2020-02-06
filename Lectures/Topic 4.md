@@ -132,6 +132,106 @@
   - Sequence of operations
     + DEP5_EMPS ← σ<sub>DNO=5</sub>(EMPLOYEE)
     + RESULT ← π<sub>Fname,Lname,Salary</sub> (DEP5_EMPS)
++ The expression DEP5_EMPS ← σ<sub>DNO=5</sub>(EMPLOYEE) means:
+  - The selection result of the operation σ<sub>DNO=5</sub>(EMPLOYEE) will be saved in a relation.
+  - The relation is called DEP5_EMPS.
+  - The attributes of the DEP5_EMPS are the same as the attributes in the relation EMPLOYEE
++ The expression RESULT ← π<sub>Fname,Lname,Salary</sub> (DEP5_EMPS) means
+  - The projection result of the operation π<sub>Fname,Lname,Salary</sub> (DEP5_EMPS) will be stored in a relation.
+  - The relation is called RESULT
+  - The attributes of RESULT are Fname, Lname, and Salary.
+#### RENAME Operation
++ In some cases, we may want to rename the attributes of a relation or the relation name or both
+  - Useful when a query requires multiple operations
+  - Necessary in some cases (see JOIN operation later)
++ RENAME operation: denoted by ρ 
+  - Give a new schema to a relation R by changing(rho)
+    + attribute names {A1, A2, A3, ..., An} to {B1, B2, B3, ..., Bn}
+      - ρ<sub>(B1,B2,B3,...,Bn)</sub>(R)
+    + relation name to S
+      - ρ<sub>S</sub>(R)
+    + both the attribute names and relation names
+      - ρ<sub>S(B1,B2,B3,...,Bn)</sub>(R)
++ RENAME Operation: Shorthand Notation
+  - For convenience, we also use a shorthand for renaming attributes in an intermediate relation
+    + RESULT ← π<sub>Fname,Lname,Salary</sub>(DEP5_EMPS)
+      - RESULT will have the same attribute names as DEP5_EMPS (same attributes as EMPLOYEE)
+    + RESULT(SSN) ← π<sub>SUPERSSN</sub>(DEP5_EMPS)
+      - RESULT will have only one attribute SSN (same attributes as SUPERSSN in EMPLOYEE)
+
+### Operations for Set Theory
+#### Basic Relational Algebra Operations from Set Theory
++ UNION Operation, denoted by ∪
+  - The result of R∪S, is a relation that includes all tuples that are either in R or in S or in both R and S
+  - Duplicate tuples are eliminated
++ INTERSECTION operation: denoted by ∩
+  - The result of the operation R∩S, is a relation that includes all tuples that are in both R and S
++ SET DIFFERENCE operation: denoted by −
+  - The result of R − S, is a relation that includes all tuples that are in R but not in S
+#### Type Compatibility
++ R1(A1, A2, ..., An) and R2(B1, B2, ..., Bn) are type compatible if:
+  - they have the same number of attributes, and
+  - the domains of corresponding attributes are type compatible (i.e. dom(Ai)=dom(Bi) for i=1, 2, ..., n)
+  - Two relations may have different names and different attribute names
++ Type Compatibility of operands is required for the binary set operations: UNION, INTERSECTION, and SET DIFFERENCE.
++ The resulting relation for R1∪R2 (also for R1∩R2, or R1 − R2) has the same attribute names as the first operand relation R1 (by convention)
+
+#### Union Operation Example
++ To retrieve the social security numbers of all employees who either work in department 5 (RESULT1 below) or directly supervise an employee who works in department 5 (RESULT2 below)
+  - DEP5_EMPS ← σ<sub>DNO=5</sub>(EMPLOYEE)
+  - RESULT1 ← π<sub>SSN</sub>(DEP5_EMPS)
+  - RESULT2(SSN) ← π<sub>SUPERSSN</sub>(DEP5_EMPS)
+  - RESULT ← RESULT1 ∪ RESULT2
++ The union operation produces the tuples that are in either RESULT1 or RESULT2 or both
+
+![Union Operation Example](https://image1.slideserve.com/3415568/figure-6-3-results-of-the-union-operation-result-result1-result2-l.jpg)
+
+
+#### UNION, INTERSECTION, and MINUS Example
+
+![UNION, INTERSECTION, and MINUS Example](https://slideplayer.com/slide/3280030/11/images/2/Set+Based%3A+UNION%2C+INTERSECTION%2C+DIFFERENCE.jpg)
+
+
+#### Properties of UNION, INTERSECT, and DIFFERENCE
++ **Commutative**: Both UNION and INTERSECTION are commutative
+  - R ∪ S = S ∪ R
+  - R ∩ S = S ∩ R
++ Associative: Both UNION and INTERSECTION are associative
+  - R ∪ (S ∪ T) = (S ∪ R) ∪ T
+  - R ∩ (S ∩ T) = (S ∩ R) ∩ T
++ The MINUS operation is neither commutative nor associative, i.e., in general
+  - R − S ≠ S − R
+  - R − (S − T) ≠ (S − R) − T
+  
+#### Binary Relational Operations: CARTESIAN PRODUCT
+
++ CARTESIAN (or CROSS) PRODUCT Operation
+  - This operation is used to combine tuples from two relations in a combinatorial fashion
+  - Denoted by R(A1, A2, ..., An) x S(B1, B2, ..., Bm)
+  - Result is a relation Q with degree n + m attributes: Q(A1, A2, ..., An, B1, B2, ..., Bm), in that order.
+  - The resulting relation state has one tuple for each combination of tuples-one from R and one from S.
+  - Hence, if R has nR tuples (denoted as |R| = n<sub>R</sub> ), and S has n<sub>S</sub> tuples, then R × S will have nR ∗ nS tuples
+  - The two operands do NOT have to be “type compatible”
++ Generally, CARTESIAN PRODUCT is **not a meaningful operation**
+  - For example:
+    + FEMALE_EMPS ← σ<sub>SEX =′F′</sub>(EMPLOYEE)
+    + EMPNAMES ← π<sub>FNAME,LNAME,SSN</sub>(FEMALE_EMPS)
+    + EMP_DEPENDENTS ← EMPNAMES×DEPENDENT
+  - EMP_DEPENDENTS will contain every combination of EMPNAMES and DEPENDENT **NO MATTER they are actually related or not**.
++ CARTESIAN PRODUCT become meaningful when followed by other operations
+  - To keep only combinations where the DEPENDENT is related to the EMPLOYEE, we add a SELECT operation
+    + FEMALE_EMPS ← σ<sub>SEX =′F′</sub>(EMPLOYEE)
+    + EMPNAMES ← π<sub>FNAME,LNAME,SSN</sub>(FEMALE_EMPS)
+    + EMP_DEPENDENTS ← EMPNAMES×DEPENDENT
+    + ACTUAL_DEPS ← σ<sub>SSN=ESSN</sub> (EMP_DEPENDENTS)
+    + RESULT ← π<sub>FNAME ,LNAME ,DEPENDENTNAME</sub> (ACTUAL_DEPS)
+    
+  - RESULT will now contain the name of female employees and their dependents
+  
+  ![](https://images.slideplayer.com/16/5113977/slides/slide_7.jpg)
+  ![](https://image3.slideserve.com/5731883/figure-6-5b-the-cartesian-product-cross-product-operation-l.jpg)
   
   
+  
+  #### Binary Relational Operations: JOIN
   
