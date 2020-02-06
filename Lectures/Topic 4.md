@@ -104,5 +104,21 @@
     + The other attributes in each tuple are discarded
 + The general form of the project operation is: π<sbu>\<attribute list\></sub>(R) where
   - π (pi) is the symbol used to represent the project operation
-  - <attribute list> is the desired list of attributes from relation R, seperated by comma(,)
+  - \<attribute list\> is the desired list of attributes from relation R, seperated by comma(,)
++ Example: To list each employee’s first and last name and salary, the following is used:
+  - π<sub>Lname, Fname Salary</sub>(EMPLOYEE)
+
++ **PROJECT Operation Properties**
+  - The project operation removes any duplicate tuples
+    + This is because the result of the project operation must be a set of
+    + tuples. Mathematical sets do not allow duplicate elements.
+  - The number of tuples in the result of projection π<sub>list</sub>(R) always less or equal to the number of tuples in R
+    + If the list of attributes includes a key of R, then the number of tuples in the result of PROJECT is equal to the number of tuples in R
+  - PROJECT is NOT commutative
+    + π<sub>\<list1\></sub>(π<sub>\<list2\></sub>(R)) = π<sub>\<list1\></sub>(R) as long as \<list2\> contains the attributes
+ in \<list1\>
+  
+  
+  
+  
   
