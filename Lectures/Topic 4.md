@@ -118,6 +118,8 @@
     + π<sub>\<list1\></sub>(π<sub>\<list2\></sub>(R)) = π<sub>\<list1\></sub>(R) as long as \<list2\> contains the attributes
  in \<list1\>
   
+![select project](http://www.brainkart.com/media/extra/OG7pA6u.jpg)
+  
   
   
   
