@@ -330,7 +330,7 @@
   - Use of the Aggregate Functional operation ℑ
     + retrieves the maximum salary value from the EMPLOYEE relation ℑ <sub>MAX Salary</sub>(EMPLOYEE)
     + retrieves the minimum Salary value from the EMPLOYEE relation ℑ <sub>MIN Salary</sub>(EMPLOYEE)
-    + retrieves the sum of the Salary from the EMPLOYEE relation ξ <sub>SUM Salary</sub>(EMPLOYEE)
+    + retrieves the sum of the Salary from the EMPLOYEE relation ℑ <sub>SUM Salary</sub>(EMPLOYEE)
     + computes the count (number) of employees and their average salary ℑ<sub>COUNT SSN, AVERAGE Salary</sub>(EMPLOYEE)
       - Note: count just counts the number of rows, without removing duplicates
 + Using Group with Aggregation
@@ -361,3 +361,46 @@
   - Example
   
   ![Recursive Closure Operation](https://image1.slideserve.com/2632734/recursive-closure-operation1-l.jpg)
+  
+  
++ OUTER JOIN Operation
+  - In NATURAL JOIN and EQUIJOIN
+    + Tuples without a matching (or related) tuple are eliminated from the join result
+    + Tuples with null in the join attributes are also eliminated
+    + This amounts to loss of information
+  - A set of operations, called OUTER joins, can be used when we want to keep all the tuples in R, or all those in S, or all those in both relations in the result of the join, regardless of whether or not they have matching tuples in the other relation.
+  - **LEFT OUTER JOIN Operation**
+    + keeps every tuple in the first or left relation R in R ⋈ S; if no matching tuple is found in S, then the attributes of S in the join result are filled or “padded” with null values.
+    + denoted by  ⟕
+  - **RIGHT OUTER JOIN Operation**
+    + keeps every tuple in the second or right relation R in R ⋈ S; if no matching tuple is found in R, then the attributes of R in the join result are filled or “padded” with null values.
+    + denoted by  ⟖ 
+  - **FULL OUTER JOIN Operation**
+    + keeps all tuples in both the left and the right relations when no matching tuples are found, padding them with null values as needed
+    + denoted by ⟗ 
+    
+  - Example: 
+    + TEMP ← (EMPLOYEE ⟕ <sub>Ssn=Mgr\_ssn</sub>DEPARTMENT)
+    + RESULT ← π<sub>Fname, Minit, Lname</sub>(TMEP)
+    
+    ![left join](https://slideplayer.com/slide/15218896/92/images/63/Figure+8.12+The+result+of+a+LEFT+OUTER+JOIN+operation..jpg)
+
++ OUTER UNION Operation  
+  - The outer union operation was developed to take the union of tuples from two relations if the relations are not type compatible.
+  - This operation will take the union of tuples in two relations R(X, Y) and S(X, Z) that are partially compatible, meaning that only some of their attributes, say X, are type compatible.
+  - The attributes that are type compatible are represented only once in the result, and those attributes that are not type compatible from either relation are also kept in the result relation T(X, Y, Z).
+  - Example
+    + An outer union can be applied to two relations whose schemas are **STUDENT(Name, SSN, Department, Advisor)** and **INSTRUCTOR(Name, SSN, Department, Rank)**
+    + Tuples from the two relations are matched based on having the same combination of values of the shared attributes - Name, SSN, Department.
+    + If a student is also an instructor, both Advisor and Rank will have a value; otherwise, one of these two attributes will be null.
+    + The result relation STUDENT_OR_INSTRUCTOR will have the following attributes: **STUDENT_OR_INSTRUCTOR (Name, SSN, Department, Advisor, Rank)**
+  
+#### Query Examples
++ Retrieve the name and address of all employees who work for the ‘Research’ department
++ Procedural form:
+  - RESEARCH_DEPT ← σ<sub>Dname='Research'</sub>DEPARTMENT
+  - RESEARCH_EMPS ← RESEARCH_DEPT ⋈ <sub>Dnumber=Dno</sub>EMPLOYEE
+  - RESULT ← π<sub>Fname,Lname,Address</sub>(RESEARCH_EMPS)
++ Single Expression
+  - π<sub>Fname,Lname,Address</sub>(σ<sub>Dname='Research'</sub>(DEPARTMENT⋈ <sub>Dnumber=Dno</sub>EMPLOYEE))
+    
