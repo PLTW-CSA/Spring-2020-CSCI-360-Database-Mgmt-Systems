@@ -316,7 +316,7 @@
   - Algebraic Query Optimization consists of rewriting the query or modifying the query tree into an equivalent tree
   
   
-  ![query tree](https://www.brainkart.com/media/extra/xzHeoCO.jpg)
+  ![query tree](http://www.brainkart.com/media/extra/xzHeoCO.jpg)
   
 ### Additional Relational Operations
 #### Aggregate Functions and Grouping
