@@ -240,7 +240,7 @@
   - JOIN combines this sequence into a single operation
   - This operation is very important for any relational database with more than a single relation, because it allows us combine related tuples from various relations
 + Syntax
-  - The general form of a join operation on two relations R(A<sub>1</sub> , A<sub>2</sub> , ..., A<sub>n</sub>) and S(B<sub>1</sub> , B<sub>2</sub> , ..., B<sub>m</sub>) is R ⋈<sub>\<join condition\></sub> S, where R and S can be any relations that result from general relational algebra expressions
+  - The general form of a join operation on two relations R(A<sub>1</sub> , A<sub>2</sub> , ..., A<sub>n</sub>) and S(B<sub>1</sub> , B<sub>2</sub> , ..., B<sub>m</sub>) is **R ⋈<sub>\<join condition\></sub> S**, where R and S can be any relations that result from general relational algebra expressions
 + Example: Suppose that we want to retrieve the name of the manager of each department. 
   - To get the manager’s name, we need to combine each DEPARTMENT tuple with the EMPLOYEE tuple whose SSN value matches the MGRSSN value in the department tuple.
   - We do this by using the join operation: DEPT_MGR ← DEPARTMENT⋈<sub>MGRSSN =SSN</sub>EMPLOYEE
