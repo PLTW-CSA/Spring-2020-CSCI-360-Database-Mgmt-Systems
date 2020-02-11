@@ -395,7 +395,7 @@
     + If a student is also an instructor, both Advisor and Rank will have a value; otherwise, one of these two attributes will be null.
     + The result relation STUDENT_OR_INSTRUCTOR will have the following attributes: **STUDENT_OR_INSTRUCTOR (Name, SSN, Department, Advisor, Rank)**
   
-#### Query Examples
+#### Query Examples 1
 + Retrieve the name and address of all employees who work for the ‘Research’ department
 + Procedural form:
   - RESEARCH_DEPT ← σ<sub>Dname='Research'</sub>DEPARTMENT
@@ -404,3 +404,12 @@
 + Single Expression
   - π<sub>Fname,Lname,Address</sub>(σ<sub>Dname='Research'</sub>(DEPARTMENT⋈ <sub>Dnumber=Dno</sub>EMPLOYEE))
     
+#### Query Examples 2
++ Retrieve the names of employees who have no dependents
++ Procedural form:
+  - ALL_EMPS ← π<sub>SSN</sub>(EMPLOYEE)
+  - EMPS_WITH_DEPS(Ssn) ← π<sub>Essn</sub>(DEPENDENT)
+  - EMPS_WITHOUT_DEPS ← ALL_EMPS − EMPS_WITH_DEPS
+  - RESULT ← π<sub>Lname,Fname</sub>(EMPS_WITHOUT_DEPS * EMPLOYEE)
++ Single expression:
+  - π<sub>Lname,Fname</sub>((π<sub>Ssn</sub>(EMPLOYEE) − π<sub>Essn</sub>(DEPENDENT))*EMPLOYEE)
