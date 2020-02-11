@@ -249,4 +249,12 @@
     + The join condition can also be specified as: DEPARTMENT.MGRSSN= EMPLOYEE.SSN
 + JOIN Properties
   - Consider the following JOIN operation: R(A<sub>1</sub> , A<sub>2</sub> , ..., A<sub>n</sub>) ⋈<sub>R.A<sub>i</sub>=S.B<sub>j</sub></sub> S(B<sub>1</sub> , B<sub>2</sub> , ..., B<sub>m</sub>)
+  - Result is a relation Q with degree n + m attributes Q(A<sub>1</sub>, A<sub>2</sub>, ..., A<sub>n</sub>, B<sub>1</sub>, B<sub>2</sub>, ..., B<sub>m</sub>), in that order.
+  - The resulting relation state has one tuple for each combination of tuples – r from R and s from S, but only if they satisfy the join condition r[A<sbu>i</sub>]=s[B<sub>j</sub>]
   
+  - Hence, if R has n<sub>R</sub> tuples, and S has n<sub>S</sub> tuples, then the join result will generally have less than n<sub>R</sub>∗n<sub>S</sub> tuples
+  - Only related tuples (based on the join condition) will appear in the result
++ **Theta JOIN**
+  - Theta JOIN: the general case of JOIN operation, denoted by R(A<sub>1</sub> , A<sub>2</sub> , ..., A<sub>n</sub>) ⋈<sub>theta</sub> S(B<sub>1</sub> , B<sub>2</sub> , ..., B<sub>m</sub>)
+    + The join condition is called theta (θ)
+    + Theta can be any general boolean expression on the attributes of R and S; for example: R.A<sub>i</sub> < S.B<sub>j</sub> AND (R.A<sub>k</sub> = S.B<sub>l</sub> OR R.A<sub>p</sub> < S.B<sub>q</sub>)
