@@ -234,5 +234,19 @@
   
   
   
-  #### Binary Relational Operations: JOIN
+#### Binary Relational Operations: JOIN
++ JOIN Operation (denoted by ⋈) 
+  - The sequence of CARTESIAN PRODECT followed by SELECT is used quite commonly to identify and select related tuples from two relations.
+  - JOIN combines this sequence into a single operation
+  - This operation is very important for any relational database with more than a single relation, because it allows us combine related tuples from various relations
++ Syntax
+  - The general form of a join operation on two relations R(A<sub>1</sub> , A<sub>2</sub> , ..., A<sub>n</sub>) and S(B<sub>1</sub> , B<sub>2</sub> , ..., B<sub>m</sub>) is R ⋈<sub>\<join condition\></sub> S, where R and S can be any relations that result from general relational algebra expressions
++ Example: Suppose that we want to retrieve the name of the manager of each department. 
+  - To get the manager’s name, we need to combine each DEPARTMENT tuple with the EMPLOYEE tuple whose SSN value matches the MGRSSN value in the department tuple.
+  - We do this by using the join operation: DEPT_MGR ← DEPARTMENT⋈<sub>MGRSSN =SSN</sub>EMPLOYEE
+  - MGRSSN=SSN is the join condition
+    + Combines each department record with the employee who manages the department
+    + The join condition can also be specified as: DEPARTMENT.MGRSSN= EMPLOYEE.SSN
++ JOIN Properties
+  - Consider the following JOIN operation: R(A<sub>1</sub> , A<sub>2</sub> , ..., A<sub>n</sub>) ⋈<sub>R.A<sub>i</sub>=S.B<sub>j</sub></sub> S(B<sub>1</sub> , B<sub>2</sub> , ..., B<sub>m</sub>)
   
