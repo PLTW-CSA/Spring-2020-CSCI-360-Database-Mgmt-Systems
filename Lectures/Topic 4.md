@@ -247,6 +247,9 @@
   - MGRSSN=SSN is the join condition
     + Combines each department record with the employee who manages the department
     + The join condition can also be specified as: DEPARTMENT.MGRSSN= EMPLOYEE.SSN
+  
+  ![joint](https://lh5.ggpht.com/-c03wuyD6Ods/VRGf3gURduI/AAAAAAABf6c/ykqMUYs6-Nw/clip_image038_thumb.gif?imgmax=800)
+  
 + JOIN Properties
   - Consider the following JOIN operation: R(A<sub>1</sub> , A<sub>2</sub> , ..., A<sub>n</sub>) ⋈<sub>R.A<sub>i</sub>=S.B<sub>j</sub></sub> S(B<sub>1</sub> , B<sub>2</sub> , ..., B<sub>m</sub>)
   - Result is a relation Q with degree n + m attributes Q(A<sub>1</sub>, A<sub>2</sub>, ..., A<sub>n</sub>, B<sub>1</sub>, B<sub>2</sub>, ..., B<sub>m</sub>), in that order.
@@ -258,3 +261,102 @@
   - Theta JOIN: the general case of JOIN operation, denoted by R(A<sub>1</sub> , A<sub>2</sub> , ..., A<sub>n</sub>) ⋈<sub>theta</sub> S(B<sub>1</sub> , B<sub>2</sub> , ..., B<sub>m</sub>)
     + The join condition is called theta (θ)
     + Theta can be any general boolean expression on the attributes of R and S; for example: R.A<sub>i</sub> < S.B<sub>j</sub> AND (R.A<sub>k</sub> = S.B<sub>l</sub> OR R.A<sub>p</sub> < S.B<sub>q</sub>)
+    + Most join conditions involve one or more equality conditions “AND”ed together; for example: R.A<sub>i</sub> < S.B<sub>j</sub> AND R.A<sub>k</sub> = S.B<sub>l</sub> AND R.A<sub>p</sub> < S.B<sub>q</sub>
+  - Theta JOIN example: CAR⋈<sub>CarPrice≥BoatPrice</sub>BOAT
+  
++ **EQUIJOIN**
+  - The most common use of join involves join conditions with equality comparisons only
+  - The only comparison operator used in EQUIJOIN is =
+  - In the result of an EQUIJOIN we always have one or more pairs of attributes (whose names need NOT be identical) that have identical values in every tuple.
+  - The JOIN seen in the previous example was an EQUIJOIN.
++ **NATURAL JOIN**
+  - NATURAL JOIN Operation (denoted by ∗)
+    + It requires that the two join attributes, or each pair of corresponding  join attributes, have the same name in both relations.
+    + If this is not the case, a renaming operation is applied first.
+    + It was created to get rid of the second (superfluous) attribute in an EQUIJOIN condition because one of each pair of attributes with identical values is superfluous.
+  - Example: Q ← R(A,B,C,D) * S(C,D,E)
+    + The implicit join condition includes each pair of attributes with the same name, “AND”ed together R.C=S.C AND R.D=S.D
+    + Result keeps only one attribute of each such pair Q(A, B, C, D, E)
+  - Example: To apply a natural join on the DNUMBER attributes of DEPARTMENT and DEPT_LOCATIONS, it is sufficient to write **DEPT_LOCS ← DEPARTMENT * DEPT_LOCATIONS** 
+    + Only attribute with the same name is DNUMBER
+    + An implicit join condition is created based on this attribute: DEPARTMENT.DNUMBER=DEPT_LOCATIONS.DNUMBER
+    
+    ![dept_locs](https://lh5.ggpht.com/-OOULiwSNjBk/VRGgIO_ThnI/AAAAAAABf7U/DoTGrBju9xI/clip_image045_thumb.gif?imgmax=800)
+    
+#### Complete Set of Relational Operations
++ The set of operations including SELECT, PROJECT, UNION, DIFFERENCE, RENAME, and CARTESIAN PRODUCT is called a complete set because
+  - any other relational algebra expression can be expressed by a combination of these five operations
++ For example:
+  - R∩S = (R∪S) − ((R − S)∪(S − R))
+  - R ⋈ <sub>\<join condition\></sub> S = σ<sub>\<join condition\></sub>(R×S)
+  
+#### Binary Relational Operations: DIVISION
++ DIVISION Operation, denoted by (÷)
+  - The division operation is applied to two relations R and S, denoted by R(Z) ÷ S(X) where
+    + Z is the set of attributes of R
+    + X is the set of attributes of S
+    + X is a subset of Z
+    + Let Y be the set of attributes of R that are not attributes of S, i.e, Y = Z - X
+  - The result of DIVISION is a relation T(Y) that includes a tuple t if tuples t<sub>R</sub> appear in R with t<sub>R</sub>[Y] = t, and with t<sub>R</sub>[X] = t<sub>S</sub> for every tuple t<sub>S</sub> in S.
+  - For a tuple t to appear in the result T of the DIVISION, the values in t must appear in R in combination with every tuple in S.
+  - DIVISION Example
+  
+  ![division](https://www.cs.montana.edu/~halla/csci440/n6/figure-6-8.png)
+  
+  
+  ![operations of relational algebra](https://www.cs.montana.edu/~halla/csci440/n6/table-6-1.png)
+  
+#### Query Tree Notation
++ Query Tree
+  - An internal data structure to represent a query
+  - Standard technique for estimating the work involved in executing the query, the generation of intermediate results, and the optimization of execution
+  - Nodes stand for operations like selection, projection, join, renaming, division, ...
+  - Leaf nodes represent base relations
+  - A tree gives a good visual feel of the complexity of the query and the operations involved
+  - Algebraic Query Optimization consists of rewriting the query or modifying the query tree into an equivalent tree
+  
+  
+  ![query tree](https://www.brainkart.com/media/extra/xzHeoCO.jpg)
+  
+### Additional Relational Operations
+#### Aggregate Functions and Grouping
++ A type of request that cannot be expressed in the basic relational algebra is to specify mathematical **aggregate functions** on collections of values from the database
+  - Examples of such functions include retrieving the average or total salary of all employees or the total number of employee tuples
+  - These functions are used in simple statistical queries that summarize information from the database tuples
+  - Common functions applied to collections of numeric values include **SUM, AVERAGE, MAXIMUM, and MINIMUM**
+  - The **COUNT** function is used for counting tuples or values
++ Aggregate Function Operation
+  - Use of the Aggregate Functional operation ξ
+    + retrieves the maximum salary value from the EMPLOYEE relation ξ<sub>MAX Salary</sub>(EMPLOYEE)
+    + retrieves the minimum Salary value from the EMPLOYEE relation ξ<sub>MIN Salary</sub>(EMPLOYEE)
+    + retrieves the sum of the Salary from the EMPLOYEE relation ξ<sub>SUM Salary</sub>(EMPLOYEE)
+    + computes the count (number) of employees and their average salary ξ<sub>COUNT SSN, AVERAGE Salary</sub>(EMPLOYEE)
+      - Note: count just counts the number of rows, without removing duplicates
++ Using Group with Aggregation
+  - The previous examples all summarized one or more attributes for a set of tuples
+    + Maximum Salary or Count (number of) Ssn
+  - Grouping can be combined with Aggregate Functions
+    + Example: For each department, retrieve the DNO, COUNT SSN, and AVERAGE SALARY
+    + A variation of aggregate operation ξ allows this
+      - Grouping attribute placed to left of symbol
+      - Aggregate functions to right of symbol
+      - For example: DNOξCOUNT<sub>SSN, AVERAGE Salary</sub>(EMPLOYEE)
+      - Above operation groups employees by DNO (department number) and computes the count of employees and average salary per departmen
+    
+    ![aggregate function operation](https://www.cs.montana.edu/~halla/csci440/n6/figure-6-10.png)
+    
+    ![aggregate function operation](https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQi6Avc5-YsN-tVu8VyGaAyeBqmrArkcXRKUFve8R0KutcAWx3D)
+    
+    
++ Recursive Closure Operation
+  - Another type of operation that, in general, cannot be specified in the basic original relational algebra is recursive closure
+    + This operation is applied to a recursive relationship, i.e., an entity type has a relationship type with itself.
+  - An example of a recursive operation is to retrieve all SUPERVISEES of an EMPLOYEE **e** at all levels - that is,
+    + all EMPLOYEE e" directly supervised by e';
+    + all employees e”" directly supervised by each employee e”;
+    + and so on
+  - Although it is possible to retrieve employees at each level and then take their union, we cannot, in general, specify a query such as “retrieve the supervisees of ‘James Borg’ at all levels” without utilizing a looping mechanism
+    + The SQL3 standard includes syntax for recursive closure
+  - Example
+  
+  ![Recursive Closure Operation](https://image1.slideserve.com/2632734/recursive-closure-operation1-l.jpg)
