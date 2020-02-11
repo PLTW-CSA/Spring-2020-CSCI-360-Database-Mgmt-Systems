@@ -326,21 +326,22 @@
   - Common functions applied to collections of numeric values include **SUM, AVERAGE, MAXIMUM, and MINIMUM**
   - The **COUNT** function is used for counting tuples or values
 + Aggregate Function Operation
-  - Use of the Aggregate Functional operation ξ
-    + retrieves the maximum salary value from the EMPLOYEE relation ξ<sub>MAX Salary</sub>(EMPLOYEE)
-    + retrieves the minimum Salary value from the EMPLOYEE relation ξ<sub>MIN Salary</sub>(EMPLOYEE)
-    + retrieves the sum of the Salary from the EMPLOYEE relation ξ<sub>SUM Salary</sub>(EMPLOYEE)
-    + computes the count (number) of employees and their average salary ξ<sub>COUNT SSN, AVERAGE Salary</sub>(EMPLOYEE)
+  - Syntax: <sub>\<groupting attributes\></sub> ℑ <sub>\<function list\></sub>(R)
+  - Use of the Aggregate Functional operation ℑ
+    + retrieves the maximum salary value from the EMPLOYEE relation ℑ <sub>MAX Salary</sub>(EMPLOYEE)
+    + retrieves the minimum Salary value from the EMPLOYEE relation ℑ <sub>MIN Salary</sub>(EMPLOYEE)
+    + retrieves the sum of the Salary from the EMPLOYEE relation ξ <sub>SUM Salary</sub>(EMPLOYEE)
+    + computes the count (number) of employees and their average salary ℑ<sub>COUNT SSN, AVERAGE Salary</sub>(EMPLOYEE)
       - Note: count just counts the number of rows, without removing duplicates
 + Using Group with Aggregation
   - The previous examples all summarized one or more attributes for a set of tuples
     + Maximum Salary or Count (number of) Ssn
   - Grouping can be combined with Aggregate Functions
     + Example: For each department, retrieve the DNO, COUNT SSN, and AVERAGE SALARY
-    + A variation of aggregate operation ξ allows this
+    + A variation of aggregate operation ℑ allows this
       - Grouping attribute placed to left of symbol
       - Aggregate functions to right of symbol
-      - For example: DNOξCOUNT<sub>SSN, AVERAGE Salary</sub>(EMPLOYEE)
+      - For example: DNOℑCOUNT<sub>SSN, AVERAGE Salary</sub>(EMPLOYEE)
       - Above operation groups employees by DNO (department number) and computes the count of employees and average salary per departmen
     
     ![aggregate function operation](https://www.cs.montana.edu/~halla/csci440/n6/figure-6-10.png)
