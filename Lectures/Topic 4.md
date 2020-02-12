@@ -413,3 +413,32 @@
   - RESULT ← π<sub>Lname,Fname</sub>(EMPS_WITHOUT_DEPS * EMPLOYEE)
 + Single expression:
   - π<sub>Lname,Fname</sub>((π<sub>Ssn</sub>(EMPLOYEE) − π<sub>Essn</sub>(DEPENDENT))*EMPLOYEE)
+  
+## Relational Calculus
+### Tuple Relational Calculus
++ The tuple relational calculus is based on specifying a number of tuple variables
++ Each tuple variable usually ranges over a particular database relation, meaning that the variable may take as its value any individual tuple from that relation
++ A simple tuple relational calculus query is of the form **{t|COND(t)}**
+  - where t is a tuple variable and COND (t) is a conditional expression involving t.
+  - The result of such a query is the set of all tuples t that satisfy COND(t).
++ Example
+  - To find the first and last names of all employees whose salary is above $50,000.
+  - Solution using the tuple calculus expression: {t.Fname, t.Lname | EMPLOYEE(t) AND t.Salary > 50000} where
+    + The condition EMPLOYEE(t) specifies that the range relation of tuple variable t is EMPLOYEE
+    + The first and last name of each EMPLOYEE tuple t that satisfies the condition t.SALARY>50000 will be retrieved.
+#### Existential and Universal Quantifiers
++ Two special symbols called quantifiers can appear in formulas; these are the universal quantifier (∀) and the existential quantifier (∃).
++ Informally, a tuple variable t is bound if it is quantified, meaning that it appears in an (∀t) or (∃t) clause; otherwise, it is free
++ ∀ is called the universal or “for all” quantifier because every tuple in “the universe of” tuples must make F true to make the quantified formula true.
++ ∃ is called the existential or “there exists” quantifier because any tuple that exists in “the universe of” tuples may make F true to make the quantified formula true.
++ If F is a formula, then so are (∀t)(F) and (∃t)(F), where t is a tuple variable
+  - The formula (∃ t)(F) is true if the formula F evaluates to true for some (at least one) tuple assigned to free occurrences of t in F; otherwise (∃t)(F) is false.
+  - The formula (∀ t)(F) is true if the formula F evaluates to true for every tuple (in the universe) assigned to free occurrences of t in F; otherwise (∀t)(F) is false.
++ Example 1: Retrieve the name and address of all employees who work for the ‘Research’ department.
+  - The query can be expressed as:
+  ~~~~
+  {t.Fname, t.Lname, t.Address | EMPLOYEE(t) and (∃ d) (DEPARTMENT(d) and d.Dname=‘Research’ and d.Dnumber=t.Dno) }
+  ~~~~
+  - The only free tuple variables should be those that appear to the left of the bar ( | ).
+
+### Domain Relational Calculus
