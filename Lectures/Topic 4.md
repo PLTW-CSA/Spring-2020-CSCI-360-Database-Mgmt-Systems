@@ -440,5 +440,51 @@
   {t.Fname, t.Lname, t.Address | EMPLOYEE(t) and (∃ d) (DEPARTMENT(d) and d.Dname=‘Research’ and d.Dnumber=t.Dno) }
   ~~~~
   - The only free tuple variables should be those that appear to the left of the bar ( | ).
+    + In above query, t is the only free variable; it is then bound successively to each tuple.
+  - If a tuple satisfies the conditions specified in the query, the attributes Fname, Lname, and Address are retrieved for each such tuple
+    + The conditions EMPLOYEE (t) and DEPARTMENT(d) specify the range relations for t and d.
+    + The condition d.Dname = ‘Research’ is a selection condition, whereas the condition d.Dnumber = t.Dno is a JOIN condition.
++ Example 2: Find the names of employees who work on all the projects controlled by department number 5.
+  - The query can be expressed as
+  ~~~~
+  {e.Lname, e.Fname | EMPLOYEE(e) AND ((∃ x)(∃ w)(PROJECT(X) AND WORKS_ON(w) AND x.Dnum=5 AND w.Essn=e.Ssn AND x.Pnumber=w.Pno)) }
+  ~~~~
 
 ### Domain Relational Calculus
++ Another variation of relational calculus called the domain relational calculus, or simply, domain calculus is equivalent to tuple calculus and to relational algebra
++ The language called QBE (Query-By-Example) that is related to domain calculus was developed almost concurrently to SQL at IBM Research, Yorktown Heights, New York
+  - Domain calculus was thought of as a way to explain what QBE does
++ Domain calculus differs from tuple calculus in the type of variables used in formulas:
+  - Rather than having variables range over tuples, the variables range over single values from domains of attributes.
++ To form a relation of degree n for a query result, we must have n of these domain variables - one for each attribute
++ An expression of the domain calculus is of the form: **{x<sub>1</sub>,x<sub>2</sub>,. . .,x<sub>n</sub> |COND(x<sub>1</sub>,x<sub>2</sub>,. . .,x<sub>n</sub>,x<sub>n+1</sub>,x<sub>n+2</sub>,. . ., x<sub>n+m</sub> )}**
+  - where x<sub>1</sub>,x<sub>2</sub>,. . .,x<sub>n</sub>,x<sub>n+1</sub>,x<sub>n+2</sub>,. . ., x<sub>n+m</sub> are domain variables that range over domains (of attributes)
+  - COND is a condition or formula of the domain relational calculus
++ Example: Retrieve the birthdate and address of the employee whose name is ‘John B. Smith’.
+  - The query can be expressed as:
+  ~~~~
+  {uv | (∃ q) (∃ r) (∃ s) (∃ t) (∃ w) (∃ x) (∃ y) (∃ z) (EMPLOYEE(qrstuvwxyz) AND q=’John’ AND r=’B’ AND s=’Smith’)}
+  ~~~~
+  - EMPLOYEE(qrstuvwxyz) is the abbreviation of EMPLOYEE(q,r,s,t,u,v,w,x,y,z)
+  - Ten variables for the employee relation are needed, one to range over the domain of each attribute in order.
+    + Of the ten variables q,r,s,. . .,z,only u and v are free
+  - The free domain variable u specifies the requested attribute Bdate and v for Address.
+  - Select condition follows the bar ( | )
+    + that the sequence of values assigned to the variables qrstuvwxyz be a tuple of the employee relation and that the values for q (Fname), r (Minit), and s (Lname) be ‘John’, ‘B’, and ‘Smith’, respectively.
+## Query By Example
+### Overview
++ This language is based on the idea of giving an example of a query using “example elements” which are nothing but domain variables
++ Notation: An example element stands for a domain variable and is specified as an example value preceded by the underscore character
++ P. (called P dot) operator (for “print”) is placed in those columns which are requested for the result of the query
++ A user may initially start giving actual values as examples, but later can get used to providing a minimum number of variables as example elements
+
++ The language is very user-friendly, because it uses minimal syntax
++ QBE was fully developed further with facilities for grouping, aggregation, updating etc. and is shown to be equivalent to SQL
++ The language is available under QMF (Query Management Facility) of DB2 of IBM and has been used in various ways by other products like ACCESS of Microsoft, and PARADOX
++ For details, see Appendix C in the text
++ QBE initially presents a relational schema as a “blank schema” in which the user fills in the query as an example:
+
+### QBE Exmple Schema
++ The following schema will be used to explain query-by-example.
+
+![QBE Exmple Schema](https://files.transtutors.com/test/qimg/ca051734-86c4-46e9-86d1-d6ee5854d740.png)
