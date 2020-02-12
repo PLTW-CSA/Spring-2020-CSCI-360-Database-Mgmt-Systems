@@ -192,14 +192,7 @@ and table_constraint is:
 |CHECK|The CHECK clause specifies an expression producing a Boolean result which new or updated rows must satisfy for an insert or update operation to succeed. A check constraint specified as a column constraint should reference that column’s value only, while an expression appearing in a table constraint may reference multiple columns.|
 |FOREIGN KEY/REFERENCES|Theses clauses specify a foreign key constraint, which specifies that a group of one or more columns of the new table must only contain values which match against values in the referenced column(s) refcolumn of the referenced table reftable. If refcolumn is omitted, the primary key of the reftable is used. The referenced columns must be the columns of a unique or primary key constraint in the referenced table.|
 |ON DELETE/ON UPDATE|when the data in the referenced columns is changed, certain actions are performed on the data in this table’s columns. The ON DELETE clause specifies the action to perform when a referenced row in the referenced table is being deleted. Likewise, the ON UPDATE clause specifies the action to perform when a referenced column in the referenced table is being updated to a new value. If the row is updated, but the referenced column is not actually changed, no action is done.|
-|action|There are the following possible actions for each ON DELETE or ON UPDATE clause:
-<ul>
-  <li>NO ACTION: Produce an error indicating that the deletion or update would create a foreign key constraint violation. This is the default action.</li>
-  <li>RESTRICT: Same as NO ACTION except that this action will not be deferred even if the rest of the constraint is deferrable and deferred.</li>
-  <li>CASCADE: Delete any rows referencing the deleted row, or update the value of the referencing column to the new value of the referenced column, respectively.</li>
-  <li>SET NULL: Set the referencing column values to null.</li>
-  <li>SET DEFAULT: Set the referencing column values to their default value.</li>
-  </ul>|
+|action|There are the following possible actions for each ON DELETE or ON UPDATE clause:<ul><li>NO ACTION: Produce an error indicating that the deletion or update would create a foreign key constraint violation. This is the default action.</li><li>RESTRICT: Same as NO ACTION except that this action will not be deferred even if the rest of the constraint is deferrable and deferred.</li><li>CASCADE: Delete any rows referencing the deleted row, or update the value of the referencing column to the new value of the referenced column, respectively.</li><li>SET NULL: Set the referencing column values to null.</li><li>SET DEFAULT: Set the referencing column values to their default value.</li></ul>|
 ## CREATE VIEW
 ## DROP TABLE
 ## ALTER TABLE
