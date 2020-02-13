@@ -13,7 +13,7 @@
 + a) σ<sub>Dno = 5 AND Salary >= 25000</sub>(EMPLOYEE)
 + b) π<sub>Essn, Relationship</sub>(DEPENDENT)
 + c) π<sub>Ssn</sub>(EMPLOYEE) – PROJECT<sub>Essn</sub>(DEPENDENT)
-+ d) π<sub>Mgr_ssn</sub>(DEPARTMENT) ∪ π<sub>ssn</sub>(DEPENDENT)
++ d) π<sub>Mgr_ssn</sub>(DEPARTMENT) ∪ π<sub>Essn</sub>(DEPENDENT)
 
 + e) π<sub>Essn, Pno</sub>(WORKS_ON)  / π<sub>Pno</sub>( σ<sub>ssn = ‘123456789’</sub>(WORKS_ON))
 
