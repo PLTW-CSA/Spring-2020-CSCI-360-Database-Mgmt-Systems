@@ -55,6 +55,6 @@
 
 # Step 1: Answer Questions 1 - 2, save your answers in a PDF file, name it as "CSCI360_Homework4_JohnDoe(0123456).pdf", where 0123456 is your bee card number.
 
-+ **Note**: You can use eiter operation symbols or names in your answer. For example, you can write one query as **SELECT<sub>Ssn</sub>(EMPLOYEEE)** or **σ<sub>Ssn</sub>(EMPLOYEEE)**. But you have to understand the meaning of the relational operation symbols once they are given, because I will use the symbols in  the homework assignments and exams.
++ **Note**: You can use eiter operation symbols or names in your answer. For example, you can write one query as **SELECT<sub>Ssn</sub>(EMPLOYEEE)** or **σ<sub>Ssn</sub>(EMPLOYEEE)**. But you have to understand the meanings of the relational operation symbols, because I will use the symbols in the homework assignments and exams.
 
 # Step 2: Submit your work on [Blackboard](https://blackboard.sau.edu/webapps/login/)
