@@ -5,6 +5,8 @@
 
 # Q1: Suppose each of the following Update operations is applied directly to the database shown below. Discuss all integrity constraints violated by each operation, if any. Each operation is isolated from other operations. (5 points each. Total 55)
 
+**Hint**: [Steps of checking constraint voilation](https://github.com/ZhangNingSAU/Spring-2020-CSCI-360-Database-Mgmt-Systems/blob/master/Resources/3.Steps%20of%20checking%20constraint%20violation.pdf)
+
 ![Q1](https://d2vlcm61l7u1fs.cloudfront.net/media%2F605%2F6052c100-6ddb-4570-8c74-bff61d413d87%2FphpDnEFxK.png)
 
 + a) Insert < 'Robert', 'F', 'Scott', '943775543', '21-JUN-42', '2365 Newcastle Rd, Bellaire, TX', M, 58000, '888665555', 1 > into EMPLOYEE.
