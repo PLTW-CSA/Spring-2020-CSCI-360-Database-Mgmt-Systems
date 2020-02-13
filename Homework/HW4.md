@@ -24,30 +24,35 @@
 + i) <sub>Dno, Sex</sub>ℑ<sub>COUNT(*)</sub>(EMPLOYEE)
 
 
-# Q2: Consider the relation CLASS(Course#, Univ_Section#, InstructorName, Semester, BuildingCode, Room#, TimePeriod, Weekdays, CreditHours). This represents classes taught in a university with unique Univ_Section# per class. Give what you think should be various (at least two) candidate keys and write in your own words under what constraints each candidate key would be valid. (15 points)
+# Q2: Consider the two tables T1 and T2 shown in the Figure below. Show the results of the following operations: (9 points each. Total 36 points)
 
-# Q3:  Consider the following relations for a database that keeps track of student enrollment in courses and the books adopted for each course, specify all the foreign keys for this schema. (15 points)
+## Table T1
 
-~~~~
-STUDENT (SSN, Name, Major, Bdate)
-COURSE (Course#, Cname, Dept)
-ENROLL (SSN, Course#, Quarter, Grade)
-BOOK_ADOPTION (Course#, Quarter, Book_ISBN)
-TEXT (Book_ISBN, Book_Title, Publisher, Author)
-~~~~
+|P|Q|R|
+|----|----|----|
+|10|A|5|
+|15|B|8|
+|25|A|6|
 
 
-# Q4:  Consider a STUDENT relation in a UNIVERSITY database with the following attributes (Name, SSN, Local_phone, Address, Cell_phone, Age, GPA). Note that the cell phone may be from a different city and state (or province) from the local phone. A possible tuple of the relation is shown below: (5 points each. Total 15)
+## Table T2
 
-|Name|SSN|LocalPhone|Address|Cellphone|Age|GPA|
-|----|----|----|----|----|----|----|
-|George Shaw William Edwards|123-45-6789|555-1234|123 Main St., Anytown, CA 94539|555-4321|19|3.75|
-
-+ a) Identify the critical missing information from the LocalPhone and CellPhone attributes as shown in the example above. (Hint: How do call someone who lives in a different state or province?)  
-+ b) Consider the Name attribute.  What are the advantages and disadvantages of splitting this field from one attribute into three attributes (first name, middle name, and last name)?
-+ c) What general guideline would you recommend for deciding when to store information in a single attribute and when to split the information.
+|A|B|C|
+|----|----|----|
+|10|B|6|
+|25|C|3|
+|10|B|5|
 
 
-# Step 1: Answer Questions 1 - 4, save your answers in a PDF file, name it as "CSCI360_Homework3_JohnDoe(0123456).pdf", where 0123456 is your bee card number.
++ a). T1 ⋈ <sub>T1.P = T2.A</sub> T2
++ b). T1 ⟕ <sub>T1.P = T2.A</sub> T2
++ c). T1 ⟖ <sub>T1.Q = T2.B</sub> T2
++ d).T1 ⋈ <sub>T1.P = T2.A AND T1.R = T2.C</sub> T2
+
+
+
+
+
+# Step 1: Answer Questions 1 - 2, save your answers in a PDF file, name it as "CSCI360_Homework4_JohnDoe(0123456).pdf", where 0123456 is your bee card number.
 
 # Step 2: Submit your work on [Blackboard](https://blackboard.sau.edu/webapps/login/)
