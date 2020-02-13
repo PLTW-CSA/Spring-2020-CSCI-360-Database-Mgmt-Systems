@@ -487,4 +487,4 @@
 ### QBE Exmple Schema
 + The following schema will be used to explain query-by-example.
 
-![QBE Exmple Schema](https://files.transtutors.com/test/qimg/ca051734-86c4-46e9-86d1-d6ee5854d740.png)
+![QBE Exmple Schema](https://slideplayer.com/slide/10460619/35/images/5/COMPANY+Database+Schema.jpg)
