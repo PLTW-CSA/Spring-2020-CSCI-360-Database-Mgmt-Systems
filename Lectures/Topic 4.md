@@ -341,7 +341,7 @@
     + A variation of aggregate operation ℑ allows this
       - Grouping attribute placed to left of symbol
       - Aggregate functions to right of symbol
-      - For example: DNOℑCOUNT<sub>SSN, AVERAGE Salary</sub>(EMPLOYEE)
+      - For example: DNOℑ<sub>COUNTSSN, AVERAGE Salary</sub>(EMPLOYEE)
       - Above operation groups employees by DNO (department number) and computes the count of employees and average salary per departmen
     
     ![aggregate function operation](https://www.cs.montana.edu/~halla/csci440/n6/figure-6-10.png)
