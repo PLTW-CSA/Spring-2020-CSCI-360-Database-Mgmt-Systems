@@ -381,7 +381,7 @@
     
   - Example: 
     + TEMP ← (EMPLOYEE ⟕ <sub>Ssn=Mgr\_ssn</sub>DEPARTMENT)
-    + RESULT ← π<sub>Fname, Minit, Lname</sub>(TMEP)
+    + RESULT ← π<sub>Fname, Minit, Lname, Dname</sub>(TMEP)
     
     ![left join](https://slideplayer.com/slide/15218896/92/images/63/Figure+8.12+The+result+of+a+LEFT+OUTER+JOIN+operation..jpg)
 
