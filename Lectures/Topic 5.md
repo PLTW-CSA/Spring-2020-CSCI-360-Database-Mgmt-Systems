@@ -204,9 +204,71 @@ and table_constraint is:
 + View definition are stored in databases as compiled queries that dynamically populate data to be used for users’ request.
 + Database users can select rows and columns from a view, join it with other views and tables.
 + Database users cannot feel the difference between views and tables when they retrieve data.
+### CREATE VIEW: Syntax
+~~~~
+CREATE VIEW view_name [(column_name [,...])] AS select_statement;
+~~~~
++ column_name list is optional – if it’s skipped, the view columns will be named based on the column names in the SELECT statement.
++ column_name is mandatory if one of the following is true:
+  - Any two columns would otherwise have the same name 
+  - Any column contains a computed value and no alias
++ All constraints related with this table will also be updated automatically.
+
+### CREATE VIEW: Example
++ Create a view that includes employee’s first name, last name, birth date and salary.
+~~~
+CREATE VIEW EMP
+AS
+SELECT FNAME, LNAME, BDATE, SALARY
+FROM EMPLOYEE
+~~~
 
 ## 2.3 DROP TABLE
+### DROP Statement
++ Syntax: drop a table
+~~~~
+DROP TABLE table_name [CASCADE CONSTRAINTS];
+~~~~
++ Semantics:
+  - Drop the table and all of its tuples from the database.
+  - All related constraints are also deleted.
+  - CASCADE CONSTRAINTS clause lets you drop a table and all referential integrity constraints that reference the table to be deleted.
+  
 ## 2.4 ALTER TABLE
+### ALTER TABLE Statement: Rename a Table
++ Rename an existing table
+  - Syntax:
+  ~~~
+  ALTER TABLE table_name
+    RENAME TO new_name;
+  ~~~
+  - The RENAME forms change the name of a table (or an index,sequence, or view) or the name of an individual column in a table. There is no effect on the stored data.
+  - All constraints related with this table will also be updated automatically.
+### ALTER TABLE Statement: Add a Constraint
++ Add a constraint to an existing table
+  - Syntax：
+  ~~~
+  ALTER TABLE table_name 
+    ADD table_constraint;
+  ~~~
+  - This form adds a new constraint to a table using the same syntax as CREATE TABLE.
+### ALTER TABLE Statement: Drop a Constraint
++ Remove a constraint from an existing table
+  - Syntax
+  ~~~
+  ALTER TABLE table_name
+    DROP CONSTRAINT constraint_name [RESTRICT | CASCADE];
+  ~~~
+  - This form drops constraints on a table.
+### ALTER TABLE Statement: Add a Column
++ Add a column to an existing table
+  - Syntax
+  ~~~
+  ALTER TABLE table_name
+    ADD [COLUMN] column_definition;
+  ~~~
+  - column_definition is the same as the column definition in the CREATE TABLE statement.
+  - The new attribute will have NULLs in all the tuples of the relation right after the command is executed; hence, the NOT NULL constraint is not allowed for such an attribute.
 # 3.Data Manipulation Language
 ## INSERT
 ## DELETE
