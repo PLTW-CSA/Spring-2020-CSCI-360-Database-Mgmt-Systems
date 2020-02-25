@@ -132,6 +132,13 @@
 # 2.Data Definition Language
 + CREATE statement
   - To make a new database, table, view, index, or users
+  - [Example MS SQL](https://docs.microsoft.com/en-us/sql/t-sql/statements/create-type-transact-sql?view=sql-server-ver15)
+    + The following example creates an alias type based on the system-supplied varchar data type.
+  ~~~~
+  CREATE TYPE SSN  
+  FROM varchar(11) NOT NULL ; 
+  ~~~~
+  - [Example Oracle](https://docs.oracle.com/cd/E11882_01/appdev.112/e25519/create_type.htm#LNPLS01375)
 + DROP statement
   - To destroy an existing database, table, index, view, or users
 + ALTER statement
