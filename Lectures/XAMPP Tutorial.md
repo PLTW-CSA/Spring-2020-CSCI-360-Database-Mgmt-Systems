@@ -4,11 +4,17 @@
 # Start MySQL Server
 ## MAC
 + In **General**, click **Start**
+
 ![](../Resources/xampp1.png)
+
 + In **Services**, choose each service and **Start**.(At least MySQL and Apache)
+
 ![](../Resources/xampp2.png)
+
 + In **Network**, **Enable** localhost:8080
+
 ![](../Resources/xampp3.png)
+
 + In the web browser, type "localhost:8080" then click phpMyAdmin on the top-right corner
 
 
