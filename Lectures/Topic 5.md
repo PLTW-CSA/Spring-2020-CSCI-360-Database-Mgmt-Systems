@@ -262,6 +262,7 @@ DROP TABLE table_name [CASCADE CONSTRAINTS];
     ADD table_constraint;
   ~~~
   - This form adds a new constraint to a table using the same syntax as CREATE TABLE.
+  - [Example](https://www.w3schools.com/sql/sql_ref_add_constraint.asp)
 ### ALTER TABLE Statement: Drop a Constraint
 + Remove a constraint from an existing table
   - Syntax
@@ -270,6 +271,7 @@ DROP TABLE table_name [CASCADE CONSTRAINTS];
     DROP CONSTRAINT constraint_name [RESTRICT | CASCADE];
   ~~~
   - This form drops constraints on a table.
+  - [Examples](https://www.w3schools.com/sql/sql_ref_drop_constraint.asp)
 ### ALTER TABLE Statement: Add a Column
 + Add a column to an existing table
   - Syntax
