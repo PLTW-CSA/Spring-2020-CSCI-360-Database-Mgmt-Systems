@@ -10,7 +10,9 @@
   - Data Query Language
   - SQL functions
   - Category and Schema
-  
+
+[XAMPP](https://github.com/ZhangNingSAU/Spring-2020-CSCI-360-Database-Mgmt-Systems/blob/master/Lectures/XAMPP%20Tutorial.md)
+
 # 1.SQL Data Types
 + Predefined Data Types
   - Built-in data types
