@@ -242,7 +242,8 @@ DROP TABLE table_name [CASCADE CONSTRAINTS];
   - Drop the table and all of its tuples from the database.
   - All related constraints are also deleted.
   - CASCADE CONSTRAINTS clause lets you drop a table and all referential integrity constraints that reference the table to be deleted.
-  
++ Example:
+  - [Clear the COMPANY database](https://github.com/ZhangNingSAU/Spring-2020-CSCI-360-Database-Mgmt-Systems/blob/master/Resources/CompanyClear.sql)
 ## 2.4 ALTER TABLE
 ### ALTER TABLE Statement: Rename a Table
 + Rename an existing table
